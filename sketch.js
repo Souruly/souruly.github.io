@@ -167,7 +167,7 @@ function draw()
   count++;
   if(count<=iterations)
   {
-     background(25);
+     background(51);
      stroke(0);
      fill(0);
      strokeWeight(3);
