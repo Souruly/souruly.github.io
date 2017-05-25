@@ -169,7 +169,7 @@ function draw()
   {
      background(51);
      stroke(0);
-     fill(0);
+     fill(255);
      strokeWeight(3);
      triangle(576,50,590,50,582,36);
      text("N",578,70)
