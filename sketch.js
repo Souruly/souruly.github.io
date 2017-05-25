@@ -157,7 +157,7 @@ function drawMap()
 function setup()
 {
   createCanvas(SIZE,SIZE);
-  frameRate(30);
+  frameRate(60);
   optimize();
   getIncrements();
 }
@@ -167,7 +167,7 @@ function draw()
   count++;
   if(count<=iterations)
   {
-     background(255);
+     background(25);
      stroke(0);
      fill(0);
      strokeWeight(3);
