@@ -1,35 +1,67 @@
-var cells = [];
-var WIDTH,HEIGHT;
-WIDTH  = HEIGHT = 500;
-var numberOfCells = 100;
-var slider;
+var HEIGHT= WIDTH = 600;
+var tree = [];
+var maxSize = 63;
+var currentSize = 0;
+var birds = [];
+var mouse;
 
 function setup()
 {
-   createCanvas(WIDTH,HEIGHT);
-   for(var i=0; i<numberOfCells ;i++)
+   createCanvas(WIDTH, HEIGHT);
+   var a = createVector(WIDTH/2,HEIGHT);
+   var b = createVector(WIDTH/2,HEIGHT-150);
+   var root = new Branch(a,b);
+   tree.push(root);
+   currentSize = 1;
+   while(currentSize<=maxSize)
    {
-      var cell = new Cell();
-      cell.start();
-      cells.push(cell);
+      addBranches(currentSize);
    }
 
-   slider = createSlider(0,numberOfCells,50,5);
+   for(var i = tree.length-1 ; i>tree.length-maxSize-2 ; i--)
+   {
+      var bird = new Bird(tree[i].endpt.x-random(-5,5),tree[i].endpt.y-random(-5,5));
+      birds.push(bird);
+   }
 }
+
+function addBranches(n)
+{
+   for(var i=0 ; i<n ; i++)
+   {
+      if(!tree[i].done)
+      {
+         tree.push(tree[i].splitLeft());
+         tree.push(tree[i].splitRight());
+         currentSize+=2;
+      }
+      tree[i].done = true;
+
+   }
+}
+
 
 function draw()
 {
-   var colour = map(slider.value(),0,100,15,240);
-   background(colour);
-   fill(255-colour);
-   for(var i=0 ; i<slider.value() ; i++)
+   background(240);
+   for(var i=0;i<tree.length;i++)
    {
-      cells[i].excite();
-      cells[i].show();
+      tree[i].show();
    }
-   for(var i=slider.value() ; i<100 ; i++)
+   ellipseMode(CENTER);
+   noStroke();
+   fill(204,0,0);
+   for(var i = tree.length-1 ; i>tree.length-maxSize-2 ; i--)
    {
-      cells[i].drop();
-      cells[i].show();
+      ellipse(tree[i].endpt.x,tree[i].endpt.y,8,8);
    }
+   noFill();
+   mouse = createVector(mouseX,mouseY);
+   for(var i=0;i<birds.length ; i++)
+   {
+      birds[i].behaviors();
+      birds[i].update();
+      birds[i].show();
+   }
+
 }
