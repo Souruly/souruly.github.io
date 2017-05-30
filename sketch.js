@@ -43,7 +43,7 @@ function addBranches(n)
 
 function draw()
 {
-   background(240);
+   background(51);
    for(var i=0;i<tree.length;i++)
    {
       tree[i].show();
