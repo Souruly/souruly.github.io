@@ -6,6 +6,7 @@ function Bird(x, y) {
   this.r = 8;
   this.maxspeed = 10;
   this.maxforce = 1;
+  this.color = color(255,255,random(31,127));
 }
 
 Bird.prototype.behaviors = function() {
@@ -31,7 +32,7 @@ Bird.prototype.update = function() {
 }
 
 Bird.prototype.show = function() {
-  stroke(0,153,0);
+  stroke(this.color);
   strokeWeight(this.r);
   point(this.pos.x, this.pos.y);
 }
