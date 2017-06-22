@@ -45,6 +45,7 @@ function draw()
    text("G",700,90);
    b = sliderB.value();
    text("B",700,140);
+   text( "Click anywhere on the grid to change the light source.",650,230,100,500);
    noFill();
    fillGrid(srow,scol,0);
    for(var i = 0 ; i < grid.length ; i++)
