@@ -240,7 +240,7 @@ function hideSolution()
          for(var j=0 ; j<data[i].locations.length ; j++)
          {
             var l = data[i].locations[j];
-            grid[l].setBackgroundColor(255);
+            grid[l].setBackgroundColor(255,255,255);
          }
       }
    }
