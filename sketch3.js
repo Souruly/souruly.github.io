@@ -84,10 +84,10 @@ function draw()
       }
       // fillGrid();
 
-      for(var i=0 ; i<grid.length ; i++)
-      {
-         grid[i].show();
-      }
+      // for(var i=0 ; i<grid.length ; i++)
+      // {
+      //    grid[i].show();
+      // }
       // if(wordsFilled==true)
       // {
       //     noLoop();
@@ -95,6 +95,10 @@ function draw()
       if(done==count)
       {
          fillGrid();
+         for(var i=0 ; i<grid.length ; i++)
+         {
+            grid[i].show();
+         }
          if(wordsFilled==false)
          {
             console.log(data);
