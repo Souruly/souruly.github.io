@@ -219,10 +219,13 @@ function solveGame()
    {
       for(var i=0 ; i<data.length ; i++)
       {
+         var r = random(255);
+         var g = random(255);
+         var b = random(255);
          for(var j=0 ; j<data[i].locations.length ; j++)
          {
             var l = data[i].locations[j];
-            grid[l].setBackgroundColor(128);
+            grid[l].setBackgroundColor(r,g,b);
          }
       }
    }
