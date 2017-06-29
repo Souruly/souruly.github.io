@@ -7,9 +7,9 @@ function Cell(x,y)
    this.backgroundColor = 255;
    // this.isWord = true;
 
-   this.setBackgroundColor = function(x)
+   this.setBackgroundColor = function(r,g,b)
    {
-      this.backgroundColor = x;
+      this.backgroundColor = color(r,g,b);
    }
 
    this.show = function()
