@@ -9,7 +9,8 @@ function Cell(x,y)
 
    this.setBackgroundColor = function(r,g,b)
    {
-      this.backgroundColor = color(r,g,b);
+      var x = color(r,g,b);
+      this.backgroundColor = x;
    }
 
    this.show = function()
