@@ -183,8 +183,18 @@ function wordSetFailure(word,r,c,xDir,yDir)
    {
       if(grid[index(r+yDir*i,c+xDir*i)].alreadySet==true)
       {
+         if(grid[index(r+yDir*i,c+xDir*i)].weight != word[i])
+         {
+            return true;
+         }
+      }
+    
+      /*
+      if(grid[index(r+yDir*i,c+xDir*i)].alreadySet==true)
+      {
          return true;
       }
+      */
    }
    return false;
 }
