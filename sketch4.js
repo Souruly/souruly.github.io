@@ -2,7 +2,7 @@ var data = [];
 var grid = [];
 var count = 8;
 var gotData = false;
-var w = 30;
+var w = 40;
 var csize = 600;
 var done = 0;
 var gridSize;
