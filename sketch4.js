@@ -114,6 +114,11 @@ function draw()
       // {
       //    done = 0;
       // }
+      else
+      {
+         textSize(50);
+         text("Generating...",150,300);
+      }
    }
 }
 
