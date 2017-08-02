@@ -6,7 +6,7 @@ function Bird(x,y)
   this.r = 3;
   this.maxSpeed = 3;
   this.maxForce = 0.15;
-  this.neighborRadius = this.r*10;
+  this.neighborRadius = this.r*15;
   this.desiredSeparation = this.r*5;
 
   this.show = function()
