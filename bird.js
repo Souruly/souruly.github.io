@@ -14,7 +14,7 @@ function Bird(x,y,c)
   this.show = function()
   {
     var theta = this.velocity.heading() + PI/2;
-    if(c==1)
+    if(this.color==1)
     {
       fill(255,0,0); 
     }
