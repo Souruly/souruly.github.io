@@ -8,7 +8,6 @@ function Bird(x,y,c)
   this.maxForce = 0.15;
   this.neighborRadius = this.r*15;
   this.desiredSeparation = this.r*5;
-  if(c==1)
   this.color = c 
 
   this.show = function()
