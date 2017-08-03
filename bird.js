@@ -1,4 +1,4 @@
-function Bird(x,y)
+function Bird(x,y,c)
 {
   this.position = createVector(x,y);
   this.velocity = createVector(random(-15,15),random(-15,15));
@@ -8,11 +8,20 @@ function Bird(x,y)
   this.maxForce = 0.15;
   this.neighborRadius = this.r*15;
   this.desiredSeparation = this.r*5;
+  if(c==1)
+  this.color = c 
 
   this.show = function()
   {
     var theta = this.velocity.heading() + PI/2;
-    fill(255,0,0);
+    if(c==1)
+    {
+      fill(255,0,0); 
+    }
+    else
+    {
+      fill(0,0,255);
+    }
     stroke(255);
     push();
     translate(this.position.x,this.position.y);
