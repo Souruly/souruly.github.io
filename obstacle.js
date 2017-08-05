@@ -5,7 +5,8 @@ function Obstacle(x,y)
 
   this.show = function()
   {
-    fill(232,0,0);
+    var c = map(repelSlider.value(),0,20,51,232);
+    fill(c,51,51);
     ellipse(this.position.x,this.position.y,this.r,this.r);
   }
 };
