@@ -1,4 +1,4 @@
-function Bird(x,y,c)
+function Bird(x,y)
 {
   this.position = createVector(x,y);
   this.velocity = createVector(random(-15,15),random(-15,15));
@@ -6,22 +6,15 @@ function Bird(x,y,c)
   this.r = 3;
   this.maxSpeed = 3;
   this.maxForce = 0.15;
-  this.neighborRadius = this.r*15;
+  this.neighborRadius = this.r*10;
   this.desiredSeparation = this.r*5;
-  this.color = c 
+  this.desiredRepulsion = this.r*10;
 
   this.show = function()
   {
     var theta = this.velocity.heading() + PI/2;
-    if(this.color==1)
-    {
-      fill(255,0,0); 
-    }
-    else
-    {
-      fill(0,0,255);
-    }
-    stroke(255);
+    fill(240);
+    noStroke();
     push();
     translate(this.position.x,this.position.y);
     rotate(theta);
@@ -36,17 +29,21 @@ function Bird(x,y,c)
     noFill();
   }
 
-  this.applyBehaviours = function(birds)
+  this.applyBehaviours = function(birds,obstacles)
   {
       var align = this.alignment(birds);
       var attract = this.cohesion(birds);
       var seperate = this.seperation(birds);
-      align.mult(1.0);
-      attract.mult(1.0);
-      seperate.mult(1.5);
+      var repel = this.repulsion(obstacles);
+      align.mult(alignSlider.value());
+      attract.mult(attractSlider.value());
+      seperate.mult(seperateSlider.value());
+      repel.mult(repelSlider.value());
+
       this.applyForce(align);
       this.applyForce(attract);
       this.applyForce(seperate);
+      this.applyForce(repel);
   }
 
   this.applyForce = function(force)
@@ -54,9 +51,9 @@ function Bird(x,y,c)
       this.acceleration.add(force);
   }
 
-  this.update = function(birds)
+  this.update = function(birds,obstacles)
   {
-    this.applyBehaviours(birds);
+    this.applyBehaviours(birds,obstacles);
     this.velocity.add(this.acceleration);
     this.velocity.setMag(4);
     this.position.add(this.velocity);
@@ -125,6 +122,34 @@ function Bird(x,y,c)
       if(d>0 && d<this.desiredSeparation)
       {
          var diff = p5.Vector.sub(this.position,birds[i].position);
+         diff.normalize();
+         diff.div(d);
+         sum.add(diff);
+         count++;
+      }
+    }
+    if(count>0)
+    {
+     sum.div(count);
+     sum.normalize();
+     sum.mult(this.maxSpeed);
+     steer = p5.Vector.sub(sum,this.velocity);
+     steer.limit(this.maxForce);
+    }
+    return steer;
+  }
+
+  this.repulsion = function(obstacles)
+  {
+    var sum = createVector(0,0);
+    var steer = createVector(0,0);
+    var count = 0;
+    for(var i=0 ; i<obstacles.length ; i++)
+    {
+      var d = p5.Vector.dist(this.position,obstacles[i].position);
+      if(d>0 && d<this.desiredRepulsion)
+      {
+         var diff = p5.Vector.sub(this.position,obstacles[i].position);
          diff.normalize();
          diff.div(d);
          sum.add(diff);
