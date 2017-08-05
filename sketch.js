@@ -70,14 +70,14 @@ function draw()
    var s = "Click anywhere to add new obstacles";
    text(s, 900, 300, 320, 400);
 
+   for(var i=0;i<Obstacles.length;i++)
+   {
+       Obstacles[i].show();
+   }
    for(var i=0;i<Birds.length;i++)
    {
        Birds[i].show();
        Birds[i].update(Birds,Obstacles);
-   }
-   for(var i=0;i<Obstacles.length;i++)
-   {
-       Obstacles[i].show();
    }
 }
 
