@@ -4,11 +4,12 @@ var numberOfBirds = 40;
 var numberOfObstacles = 10;
 var WIDTH = 800;
 var HEIGHT = 600;
-
+var r = 3;
 var attractSlider;
 var alignSlider;
 var seperateSlider;
 var repelSlider;
+var neighborSlider;
 
 function setup()
 {
@@ -23,14 +24,16 @@ function setup()
   angleMode(DEGREES);
   setPoints();
   angleMode(RADIANS);
+  neighborSlider = createSlider(0,WIDTH,30.0,10);
+  neighborSlider.position(900,55);
   attractSlider = createSlider(0,20,1.0,0.5);
-  attractSlider.position(900,55);
+  attractSlider.position(900,105);
   seperateSlider = createSlider(0,20,1.5,0.5);
-  seperateSlider.position(900,105);
+  seperateSlider.position(900,155);
   alignSlider = createSlider(0,20,1.0,0.5);
-  alignSlider.position(900,155);
+  alignSlider.position(900,205);
   repelSlider = createSlider(0,20,20.0,0.5);
-  repelSlider.position(900,205);
+  repelSlider.position(900,255);
 }
 
 function draw()
@@ -45,12 +48,13 @@ function draw()
    noStroke();
    fill(240);
    textSize(20);
-   text("Long Range Attraction",900,50);
-   text("Short Range Repulsion",900,100);
-   text("Alignment",900,150);
-   text("Obstacle Detection",900,200);
+   text("Visible Neighbor Radius",900,50);
+   text("Long Range Attraction",900,100);
+   text("Short Range Repulsion",900,150);
+   text("Alignment",900,200);
+   text("Obstacle Detection",900,250);
    var s = "Click anywhere to add new obstacles";
-   text(s, 900, 300, 320, 400);
+   text(s, 900, 350, 320, 450);
 
    for(var i=0;i<Birds.length;i++)
    {
