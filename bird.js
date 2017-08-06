@@ -53,6 +53,7 @@ function Bird(x,y)
 
   this.update = function(birds,obstacles)
   {
+    this.neighborRadius = neighborSlider.value();
     this.applyBehaviours(birds,obstacles);
     this.velocity.add(this.acceleration);
     this.velocity.setMag(4);
