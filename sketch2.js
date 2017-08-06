@@ -32,7 +32,7 @@ function setup()
   attractSlider.position(930,120);
   seperateSlider = createSlider(0,20,1.5,0.5);
   seperateSlider.position(850,185);
-  seperateRadiusSlider = createSlider(0,100,8,1);
+  seperateRadiusSlider = createSlider(0,100,50,1);
   seperateRadiusSlider.position(1000,185);
   alignSlider = createSlider(0,20,1.0,0.5);
   alignSlider.position(930,250);
