@@ -38,7 +38,7 @@ function setup()
   alignSlider.position(930,250);
   repelSlider = createSlider(0,20,20.0,0.5);
   repelSlider.position(850,320);
-  repelRadiusSlider = createSlider(0,100,10,1);
+  repelRadiusSlider = createSlider(0,100,100,1);
   repelRadiusSlider.position(1000,320);
 }
 
