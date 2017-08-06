@@ -54,6 +54,8 @@ function Bird(x,y)
   this.update = function(birds,obstacles)
   {
     this.neighborRadius = neighborSlider.value();
+    this.desiredSeparation = map(seperateRadiusSlider.value(),0,100,0,this.neighborRadius);
+    this.desiredRepulsion = map(repelRadiusSlider.value(),0,100,0,this.neighborRadius);
     this.applyBehaviours(birds,obstacles);
     this.velocity.add(this.acceleration);
     this.velocity.setMag(4);
