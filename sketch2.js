@@ -11,7 +11,7 @@ function setup()
   ellipseMode(CENTER);
   angleMode(DEGREES);
   frameRate(60);
-  var e = new Eye(800,500,100,round(random(10,20)));
+  var e = new Eye(800,500,100,20);
   eyes.push(e);
   // for(var i=0 ; i<5 ; i++)
   // {
