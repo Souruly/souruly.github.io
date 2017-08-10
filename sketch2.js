@@ -1,7 +1,8 @@
 //ArrayList<Eye> Eyes = new ArrayList();
 
 var eyes = [];
-var timer = 20;
+var defaultTimerValue = 20;
+var timer = defaultTimerValue;
 var blinkTime = timer;
 var drag = false;
 
@@ -13,11 +14,6 @@ function setup()
   frameRate(60);
   var e = new Eye(800,500,100,20);
   eyes.push(e);
-  // for(var i=0 ; i<5 ; i++)
-  // {
-  //   var e = new Eye(random(100,500),(i*120)+60,100,round(random(10,20)));
-  //   eyes.push(e);
-  // }
 }
 function draw()
 {
@@ -62,16 +58,13 @@ function draw()
 
 function mousePressed()
 {
-  if(pmouseX<600 && pmouseX >0 && pmouseY<600 && pmouseY>0)
+  if(pmouseX<900 && pmouseX>700 && pmouseY<600 && pmouseY>400)
   {
-    timer = 0;
+    drag = true;
   }
   else
   {
-      if(pmouseX<900 && pmouseX>700 && pmouseY<600 && pmouseY>400)
-      {
-        drag = true;
-      }
+    timer = 0;
   }
 }
 
