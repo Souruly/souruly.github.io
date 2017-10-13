@@ -130,6 +130,6 @@ function getIndexFromRandom(r,fitnesses)
 function checkFitness(circle)
 {
   let difference = abs(circle.r-input.r);
-  let fitness = round(map(difference,0,100,10,0));
+  let fitness = round(map(difference,0,100,100,0));
   return fitness;
 }
