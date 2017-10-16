@@ -57,7 +57,7 @@ function draw()
   /////
   textSize(40);
   textStyle(BOLD);
-  text("CAMOUGLAGE SIMULATION",900,0);
+  text("CAMOUFLAGE SIMULATION",900,0);
   textStyle(NORMAL);
   textSize(18);
   text("EVOLUTION, USING GENETIC ALGORITHMS",900,40);
