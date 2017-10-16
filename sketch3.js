@@ -65,7 +65,7 @@ function draw()
   strokeWeight(5);
   line(600,70,1200,70);
   drawBorders();
-  if(phase!=3)
+  if(phase<2)
   {
     //Show the sample color boxes
     for(let i=0 ; i<sampleColors.length ; i++)
@@ -327,6 +327,8 @@ function startSimulation()
 {
   if(phase == 1 && elementCount == 400)
   {
+    createEnvironmentButton.hide();
+    startSimulationButton.hide();
     phase = 2;
   }
 }
