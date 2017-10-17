@@ -46,7 +46,7 @@ As it is very unlikely to reach perfect 729,000 and stop further evolution, the 
 
 
 #### References : 
-1. [Google](google.com)
+1. [Genetic Algorithms](http://www.obitko.com/tutorials/genetic-algorithms/ga-basic-description.php)
 2. [Wikipedia-Giraffe](https://en.wikipedia.org/wiki/Giraffe)
 3. [Wikipedia-Evolution](https://en.wikipedia.org/wiki/Evolution)
 
