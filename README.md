@@ -4,7 +4,7 @@
 
 #### About the solution : 
 The simulation gives us an 'optimal soultion' for the given problem.
-This solution is 'optimal' in the sense that that fitness function is designed in a particulat manner.
+**"Fitness Function : Design Approach 2"** deals with 'What is optimal for this case?' and 'How is it calculated?'.
 
 #### Fitness Function:
 ###### Design Approach 1 : 
