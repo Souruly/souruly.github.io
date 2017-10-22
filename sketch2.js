@@ -30,7 +30,7 @@ function setup()
   changeViewButton.position(850,230);
   changeViewButton.mousePressed(changeView);
   link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO AND README','_blank');
-  link.position(800,490);
+  link.position(780,490);
 
   rows = height/scl;
   cols = 600/scl;
