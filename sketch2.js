@@ -1,4 +1,5 @@
 let changeViewButton;
+let link;
 let mySound;
 let originalView = true;
 
@@ -26,8 +27,10 @@ function setup()
   rectMode(CORNERS);
 
   changeViewButton = createButton("Change View");
-  changeViewButton.position(850,280);
+  changeViewButton.position(850,230);
   changeViewButton.mousePressed(changeView);
+  link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO','_blank');
+  link.position(850,490);
 
   rows = height/scl;
   cols = 600/scl;
@@ -65,17 +68,20 @@ function draw()
   textStyle(NORMAL);
   textSize(18);
   text("A LOW RES. SIMULATION FOR STATIC CHARGE STRUCTURE",900,42);
-  text("Press this button to SHOW/HIDE the underlying charges.",900,250);
+  text("Press this button to SHOW/HIDE the underlying charges.",900,200);
   stroke(0);
   //line(900,0,900,600);
   strokeWeight(5);
   line(600,70,1200,70);
+  strokeWeight(3);
+  line(600,450,1200,450);
 
   if(originalView)
   {
     fill(16);
     rect(0,0,600,height);
   }
+
   drawBorders();
   showGrid();
 
@@ -163,6 +169,15 @@ function draw()
 
   if(!originalView)
   {
+    stroke(0);
+    strokeWeight(0.5);
+    fill(255,0,0);
+    rect(860,300,880,320);
+    text("Negative",920,300);
+    fill(0,0,255);
+    rect(860,340,880,360);
+    text("Positive",920,340);
+
     for(let i=0 ; i<charges.length ; i++)
     {
       charges[i].show();
@@ -194,7 +209,7 @@ function changeView()
 function showGrid()
 {
   stroke(0);
-  strokeWeight(1);
+  strokeWeight(0.2);
   for(let i=0 ; i<rows ; i++)
   {
     line(0,i*scl,600,i*scl);
