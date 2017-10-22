@@ -1,1 +1,5 @@
-# souruly.github.io
+# Lightening
+
+## Procedural Generation for Static Charge Structure
+
+
