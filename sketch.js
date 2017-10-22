@@ -20,17 +20,17 @@ function preload() {
 
 function setup()
 {
-  createCanvas(600,600);
+  createCanvas(1200,600);
   ellipseMode(RADIUS);
   textAlign(CENTER,TOP);
   rectMode(CORNERS);
 
   changeViewButton = createButton("Change View");
-  //changeViewButton.position(250,85);
+  changeViewButton.position(850,280);
   changeViewButton.mousePressed(changeView);
 
   rows = height/scl;
-  cols = width/scl;
+  cols = 600/scl;
   oc = round(random(2,cols-1));
   or = round(random(0,2));
   let s = new Spark(or,oc,sparkCount);
@@ -56,10 +56,25 @@ function setup()
 function draw()
 {
   background(240);
+  fill(0);
+  noStroke();
+
+  textSize(40);
+  textStyle(BOLD);
+  text("LIGHTENING",900,0);
+  textStyle(NORMAL);
+  textSize(18);
+  text("A LOW RES. SIMULATION FOR STATIC CHARGE STRUCTURE",900,42);
+  text("Press this button to SHOW/HIDE the underlying charges.",900,250);
+  stroke(0);
+  //line(900,0,900,600);
+  strokeWeight(5);
+  line(600,70,1200,70);
+
   if(originalView)
   {
     fill(16);
-    rect(0,0,width,height);
+    rect(0,0,600,height);
   }
   drawBorders();
   showGrid();
@@ -182,7 +197,7 @@ function showGrid()
   strokeWeight(1);
   for(let i=0 ; i<rows ; i++)
   {
-    line(0,i*scl,width,i*scl);
+    line(0,i*scl,600,i*scl);
   }
 
   for(j=0 ; j<cols ; j++)
@@ -195,9 +210,9 @@ function drawBorders()
 {
   stroke(0);
   strokeWeight(5);
-  line(1,1,width-1,1);
-  line(width-1,1,width-1,height-1);
-  line(width-1,height-1,1,height-1);
+  line(1,1,600-1,1);
+  line(600-1,1,600-1,height-1);
+  line(600-1,height-1,1,height-1);
   line(1,height-1,1,1);
 }
 
