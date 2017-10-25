@@ -46,8 +46,8 @@ function setup()
     angles.push(a);
   }
 
-  //link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO','_blank');
-  //link.position(850,490);
+  link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO','_blank');
+  link.position(850,490);
 
 }
 
