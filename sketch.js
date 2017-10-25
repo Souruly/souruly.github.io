@@ -30,17 +30,21 @@ function setup()
     segments.push(seg);
   }
 
-  let a = 4.0;
-  angles.push(a);
-  a = 3.0;
-  angles.push(a);
-  a = -1.01;
-  angles.push(a);
-  // for(let i=0 ; i<numberOfSegments ; i++)
-  // {
-  //   let a = random(1,5);
-  //   angles.push(a);
-  // }
+  // let a = 3.01;
+  // angles.push(a);
+  // a = 4;
+  // angles.push(a);
+  // a = 5;
+  // angles.push(a);
+  for(let i=0 ; i<numberOfSegments ; i++)
+  {
+    let a = round(random(-6,6));
+    if(i==0)
+    {
+      a += random(-0.05,0.05);
+    }
+    angles.push(a);
+  }
 
   //link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO','_blank');
   //link.position(850,490);
