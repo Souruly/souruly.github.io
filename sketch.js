@@ -18,23 +18,25 @@ function setup()
   drawButton = createButton("DRAW!");
   drawButton.position(870,230);
   drawButton.mousePressed(changeView);
+  let l = floor(280/numberOfSegments);
+  console.log(l);
   //startX,startY,length,angle,index
-  let seg0 = new Segment(300,300,60,0,0);
+  let seg0 = new Segment(300,300,l,0,0);
   seg0.getInitialEndPoint();
   segments.push(seg0);
   for(let i=1 ; i<numberOfSegments ; i++)
   {
     let parent = segments[i-1];
-    let seg = new Segment(parent.endPoint.x,parent.endPoint.y,60,0,i);
+    let seg = new Segment(parent.endPoint.x,parent.endPoint.y,l,0,i);
     seg.getInitialEndPoint();
     segments.push(seg);
   }
 
-  // let a = 3.01;
-  // angles.push(a);
-  // a = 4;
+  // let a = 4.01;
   // angles.push(a);
   // a = 5;
+  // angles.push(a);
+  // a = 0;
   // angles.push(a);
   for(let i=0 ; i<numberOfSegments ; i++)
   {
@@ -46,8 +48,8 @@ function setup()
     angles.push(a);
   }
 
-  //link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO','_blank');
-  //link.position(850,490);
+  link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO','_blank');
+  link.position(850,490);
 
 }
 
