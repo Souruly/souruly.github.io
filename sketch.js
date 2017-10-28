@@ -1,7 +1,7 @@
 let drawButton;
 let link;
 let drawing = false;
-let numberOfSegments = 3;
+let numberOfSegments = round(random(3,6));
 let segments = [];
 let angles = [];
 let points = [];
