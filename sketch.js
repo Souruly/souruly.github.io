@@ -20,7 +20,7 @@ function setup()
   drawButton.position(870,230);
   drawButton.mousePressed(changeView);
   let l = floor(280/numberOfSegments);
-  console.log(l);
+  //console.log(numberOfSegments,l);
   //startX,startY,length,angle,index
   let seg0 = new Segment(300,300,l,0,0);
   seg0.getInitialEndPoint();
