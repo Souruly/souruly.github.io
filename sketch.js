@@ -1,4 +1,5 @@
 let drawButton;
+let resetButton;
 let link;
 let drawing = false;
 let numberOfSegments = 3;
@@ -8,7 +9,7 @@ let points = [];
 
 function setup()
 {
-  numberOfSegments = round(random(3,6));
+  numberOfSegments = round(random(1,6));
   createCanvas(1200,600);
   ellipseMode(RADIUS);
   textAlign(CENTER,TOP);
@@ -19,6 +20,9 @@ function setup()
   drawButton = createButton("DRAW!");
   drawButton.position(870,230);
   drawButton.mousePressed(changeView);
+  resetButton = createButton("Refresh");
+  resetButton.position(870,330);
+  resetButton.mousePressed(resetSketch);
   let l = floor(280/numberOfSegments);
   //console.log(numberOfSegments,l);
   //startX,startY,length,angle,index
@@ -44,7 +48,13 @@ function setup()
     let a = round(random(-6,6));
     if(i==0)
     {
-      a += random(-0.05,0.05);
+      let da;
+      do{
+        da = round(random(-5,5));
+      }
+      while(da==0);
+      da = da/100;
+      a += da;
     }
     angles.push(a);
   }
@@ -66,7 +76,10 @@ function draw()
   textStyle(NORMAL);
   textSize(18);
   //text("A LOW RES. SIMULATION FOR STATIC CHARGE STRUCTURE",900,42);
+  text("Number of segment(s) : " + numberOfSegments,900,100);
+  text("Rotation(s) : " + angles,900,150);
   text("Press this button to start drawing.",900,200);
+  text("Refresh the page to get new drawings each time.",900,300);
   stroke(0);
   //line(900,0,900,600);
   strokeWeight(5);
@@ -111,6 +124,10 @@ function changeView()
   }
 }
 
+function resetSketch()
+{
+  window.location.reload();
+}
 
 function drawBorders()
 {
