@@ -1,13 +1,14 @@
 let drawButton;
 let link;
 let drawing = false;
-let numberOfSegments = round(random(3,6));
+let numberOfSegments = 3;
 let segments = [];
 let angles = [];
 let points = [];
 
 function setup()
 {
+  numberOfSegments = round(random(3,6));
   createCanvas(1200,600);
   ellipseMode(RADIUS);
   textAlign(CENTER,TOP);
