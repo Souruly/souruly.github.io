@@ -1,16 +1,16 @@
 let drawButton;
+let resetButton;
 let link;
 let drawing = false;
 let numberOfSegments = 3;
 let segments = [];
+let angles = [];
 let points = [];
 let buffer;
 let px,py,tx,ty;
 
-let slider1,slider2,slider3;
-let sliders = [];
-function setup()
-{
+function setup(){
+  numberOfSegments = round(random(1,6));
   createCanvas(1200,600);
   ellipseMode(RADIUS);
   textAlign(CENTER,TOP);
@@ -19,44 +19,47 @@ function setup()
   background(240);
 
   drawButton = createButton("DRAW!");
-  drawButton.position(870,250);
+  drawButton.position(870,230);
   drawButton.mousePressed(changeView);
-  let initPosition;
-  initPosition = round(random(-6,6));
-  slider1 = createSlider(-6,6,initPosition,1);
-  slider1.position(625,150);
-  sliders.push(slider1);
-  initPosition = round(random(-6,6));
-  slider2 = createSlider(-6,6,initPosition,1);
-  slider2.position(835,150);
-  sliders.push(slider2);
-  initPosition = round(random(-6,6));
-  slider3 = createSlider(-6,6,initPosition,1);
-  slider3.position(1040,150);
-  sliders.push(slider3);
-
-  //startX,startY,length,angle,index
-  let seg0 = new Segment(300,300,60,0,0);
+  resetButton = createButton("Refresh");
+  resetButton.position(870,330);
+  resetButton.mousePressed(resetSketch);
+  let l = floor(280/numberOfSegments);
+  let seg0 = new Segment(300,300,l,0,0);
   seg0.getInitialEndPoint();
   segments.push(seg0);
   for(let i=1 ; i<numberOfSegments ; i++)
   {
     let parent = segments[i-1];
-    let seg = new Segment(parent.endPoint.x,parent.endPoint.y,60,0,i);
+    let seg = new Segment(parent.endPoint.x,parent.endPoint.y,l,0,i);
     seg.getInitialEndPoint();
     segments.push(seg);
+  }
+
+  for(let i=0 ; i<numberOfSegments ; i++)
+  {
+    let a = round(random(-6,6));
+    if(i==0)
+    {
+      let da;
+      do{
+        da = round(random(-5,5));
+      }
+      while(da==0);
+      da = da/100;
+      a += da;
+    }
+    angles.push(a);
   }
 
   buffer = createGraphics(600, 600);
   buffer.background(240);
 
-  //link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO','_blank');
-  //link.position(850,490);
-
+  link = createA('https://github.com/Souruly/souruly.github.io/blob/master/README.md','GITHUB REPO','_blank');
+  link.position(850,490);
 }
 
-function draw()
-{
+function draw(){
   background(240);
   imageMode(CORNER);
   image(buffer, 0, 0, 600, 600);
@@ -68,16 +71,13 @@ function draw()
   text("GENERATIVE ART",900,0);
   textStyle(NORMAL);
   textSize(18);
-  text(slider1.value(),692,130)
-  text(slider2.value(),900,130)
-  text(slider3.value(),1107,130)
-  text("Press this button to start drawing.",900,220);
-  textStyle(BOLD);
-  text("SET SPEEDS",900,100);
+  //text("A LOW RES. SIMULATION FOR STATIC CHARGE STRUCTURE",900,42);
+  text("Number of segment(s) : " + numberOfSegments,900,100);
+  text("Rotation(s) : " + angles,900,150);
+  text("Press this button to start drawing.",900,200);
+  text("Refresh the page to get new drawings each time.",900,300);
   stroke(0);
-  // line(750,0,750,600);
-  // line(900,0,900,600);
-  // line(1050,0,1050,600);
+  //line(900,0,900,600);
   strokeWeight(5);
   line(600,70,1200,70);
   strokeWeight(3);
@@ -98,16 +98,25 @@ function draw()
     if (frameCount > 1) {
       buffer.line(px, py, tx, ty);
     }
+
+    // let l = segments.length;
+    // let p = new Point(segments[l-1].endPoint.x,segments[l-1].endPoint.y);
+    // points.push(p);
+    //
+    // noFill();
+    // stroke(0);
+    // strokeWeight(1);
+    // beginShape();
+    // for(let i=0 ; i<points.length ; i++)
+    // {
+    //   vertex(points[i].x,points[i].y);
+    // }
+    // endShape();
   }
 
   for(let i=0 ; i<numberOfSegments ; i++)
   {
-    let angle = sliders[i].value();
-    if(i==0)
-    {
-      angle += 0.01;
-    }
-    segments[i].update(angle,segments);
+    segments[i].update(angles[i],segments);
   }
   drawBorders();
   px = tx;
@@ -119,13 +128,13 @@ function changeView()
   if(drawing==false)
   {
     drawing = true;
-    for(let i=0 ; i<sliders.length ; i++)
-    {
-      sliders[i].hide();
-    }
   }
 }
 
+function resetSketch()
+{
+  window.location.reload();
+}
 
 function drawBorders()
 {
