@@ -14,13 +14,17 @@ function setup()
 
   divisionSlider = createSlider(3,50,3,1);
   divisionSlider.class("slider");
+  divisionSlider.size(width,25);
   plusButton = createButton("+");
+  plusButton.class("button");
   plusButton.id("pButton");
   plusButton.mousePressed(divisionsPlus);
+  plusButton.position(width-50,height/2);
   minusButton = createButton("-");
+  minusButton.class("button");
   minusButton.id("mButton");
   minusButton.mousePressed(divisionsMinus);
-
+  minusButton.position(0,height/2);
 
   center = createVector(width/2, height/2);
   // console.log(points);
