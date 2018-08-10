@@ -9,7 +9,7 @@ let minusButton;
 
 function setup()
 {
-  createCanvas(1200,500);
+  createCanvas(windowWidth,windowHeight);
   ellipseMode(RADIUS);
 
   divisionSlider = createSlider(3,50,3,1);
