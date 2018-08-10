@@ -36,10 +36,12 @@ function draw()
   divisionSlider.changed(getNumberOfDivisions);
 
   background(250,250,230);
-  stroke(0);
   strokeWeight(2);
   noFill();
+  let centralTransperency = map(numberOfDivisions,3,24,120,0);
+  stroke(0,centralTransperency);
   ellipse(center.x, center.y, radius, radius);
+  stroke(0);
   for (let i=0 ; i<points.length ; i++)
   {
     ellipse(points[i].x,points[i].y,radius,radius);
