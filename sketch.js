@@ -33,6 +33,7 @@ function setup()
   ca = color(255,0,0);
   cb = color(0,255,0);
   cc = color(0,0,255);
+  thisCol = color(0,0,0);
   tCols.push(ca);
   tCols.push(cb);
   tCols.push(cc);
@@ -91,6 +92,8 @@ function draw()
   image(buffer, 0, 0, 800, 600);
   drawBorders();
   dice.show(dieValue);
+  fill(thisCol)
+  ellipse(1050,150,5,5);
   for(let i=0 ; i<fixedPoints.length ; i++)
   {
     fixedPoints[i].show();
