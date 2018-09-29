@@ -1,12 +1,13 @@
-function Point(label,x,y)
+function Point(label,x,y,col)
 {
   this.pos = createVector(x,y);
   this.label = label;
+  this.col = col;
 
   this.show = function()
   {
     noStroke();
-    fill(0);
+    fill(this.col);
     push();
     translate(this.pos.x, this.pos.y);
     textSize(15)

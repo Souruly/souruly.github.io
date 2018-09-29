@@ -1,6 +1,9 @@
 let fixedPoints = [];
 let nPoints = 3;
 let nSides = 6
+let ca,cb,cc;
+let tCols = [];
+let thisCol;
 let tracePoint;
 let buffer;
 let operationMode = 0;
@@ -27,7 +30,12 @@ function setup()
   textAlign(CENTER,CENTER);
   buffer = createGraphics(800, 600);
   buffer.ellipseMode(RADIUS);
-
+  ca = color(255,0,0);
+  cb = color(0,255,0);
+  cc = color(0,0,255);
+  tCols.push(ca);
+  tCols.push(cb);
+  tCols.push(cc);
   getDice();
 
   makeButtons();
@@ -113,10 +121,12 @@ function getNewPoint(val)
 {
   dieValue = val
   let targetIndex = floor(map(val,0,nSides-1,0,nPoints-1));
+  thisCol = tCols[targetIndex];
   let targetPoint = fixedPoints[targetIndex];
   let directionVector = p5.Vector.sub(targetPoint.pos,tracePoint);
   directionVector.mult(0.5);
   tracePoint.add(directionVector)
+  buffer.fill(thisCol);
   buffer.ellipse(tracePoint.x,tracePoint.y,1,1);
 
   if(operationMode == 2)
@@ -143,9 +153,12 @@ function getNiceTriangle()
 {
   fixedPoints = [];
   let a,b,c
-  a = new Point("A",420,50);
-  b = new Point("B",102,504);
-  c = new Point("C",640,390);
+  ca = color(255,0,0);
+  cb = color(0,255,0);
+  cc = color(0,0,255);
+  a = new Point("A",420,50,ca);
+  b = new Point("B",102,504,cb);
+  c = new Point("C",640,390,cc);
   fixedPoints.push(a);
   fixedPoints.push(b);
   fixedPoints.push(c);
@@ -164,9 +177,12 @@ function getRandomTriangle()
 {
   fixedPoints = [];
   let a,b,c
-  a = new Point("A",random(50,750),random(50,550));
-  b = new Point("B",random(50,750),random(50,550));
-  c = new Point("C",random(50,750),random(50,550));
+  ca = color(255,0,0);
+  cb = color(0,255,0);
+  cc = color(0,0,255);
+  a = new Point("A",random(50,750),random(50,550),ca);
+  b = new Point("B",random(50,750),random(50,550),cb);
+  c = new Point("C",random(50,750),random(50,550),cc);
   fixedPoints.push(a);
   fixedPoints.push(b);
   fixedPoints.push(c);
