@@ -51,6 +51,7 @@ function setup() {
     stopSimButton.hide();
 
     makeRightPane();
+    createA('https://www.washingtonpost.com/graphics/2020/world/corona-simulator/', 'Inspired from this article','_blank');
 }
 
 function makeRightPane() {
