@@ -173,19 +173,24 @@ function drawGraphAxes() {
 
     rightPane.textSize(16);
     rightPane.noStroke();
-    rightPane.text("Alive",150,360);
-    rightPane.text("Uninfected",255,360);
-    rightPane.text("Cured",375,360);
-    rightPane.text("Infected",492,360);
+    rightPane.text("Dead",120,360);
+    rightPane.text("Alive",188,360);
+    rightPane.text("Uninfected",277,360);
+    rightPane.text("Cured",374,360);
+    rightPane.text("Infected",459,360);
 
+    rightPane.noFill();
+    rightPane.stroke(0);
+    rightPane.ellipse(90,358,12,12);
+    noStroke();
     rightPane.fill(0);
-    rightPane.rect(115,350,15,15);
+    rightPane.ellipse(160,358,12,12);
     rightPane.fill(133, 219, 37);
-    rightPane.rect(200,350,15,15);
+    rightPane.ellipse(230,358,12,12);
     rightPane.fill(51, 153, 255);
-    rightPane.rect(335,350,15,15);
+    rightPane.ellipse(343,358,12,12);
     rightPane.fill(255, 0, 127);
-    rightPane.rect(445,350,15,15);
+    rightPane.ellipse(420,358,12,12);
 
     rightPane.strokeWeight(2);
 }
