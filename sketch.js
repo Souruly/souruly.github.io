@@ -32,12 +32,6 @@ function draw() {
   {
     image(mapImage, 0, 0);
   }
-  stroke(0);
-  strokeWeight(5);
-  for(let i=0 ; i<nodes.length ; i++)
-  {
-    nodes[i].show()
-  }
   noFill();
   stroke(0);
   strokeWeight(6);
@@ -56,6 +50,12 @@ function draw() {
   for(let i=0 ; i<undergrounds.length ; i++)
   {
     undergrounds[i].show()
+  }
+  stroke(0);
+  strokeWeight(5);
+  for(let i=0 ; i<nodes.length ; i++)
+  {
+    nodes[i].show()
   }
 }
 
