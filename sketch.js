@@ -213,6 +213,11 @@ function keyTyped()
   {
     showMap = !showMap;
   }
+  if(key=='d')
+  {
+    nodes.pop(); 
+    nodeNum--;
+  }
 }
 
 function downloadNodesJSON()
