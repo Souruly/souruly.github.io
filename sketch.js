@@ -59,7 +59,7 @@ function draw() {
   }
 }
 
-function mousePressed()
+function mouseClicked()
 {
   if (keyIsPressed === true) {
     if(key=='n')
