@@ -1,264 +1,137 @@
-let mapImage;
-let mapImageW = 5135;
-let mapImageH = 3857;
-let showMap = true;
+let gridDim = 20;
+let rows,cols,wx,wy,pointR;
+let drawing;
+let gridCanvas;
+let grid = []
+let lastPoint;
+let lines = []
+let resetButton;
 
-let nodeNum = 1;
-let nodes = []
-let taxis = []
-let busses = []
-let undergrounds = []
-let startPointSet=false;
-let startNodeIndex = null;
-let endPointSet=false;
-let endNodeIndex = null;
-let thisTransport;
-let downloadButton;
-
-function preload() {
-  mapImage = loadImage('map.jpg')
-}
-
-function setup() {
-  createCanvas(mapImageW, mapImageH);
-  textAlign(CENTER,CENTER);
-  downloadButton = createButton('Download Nodes List');
-  downloadButton.mousePressed(downloadNodesJSON);
-}
-
-function draw() {
-  background(51);
-  if(showMap)
-  {
-    image(mapImage, 0, 0);
-  }
-  noFill();
-  stroke(0);
-  strokeWeight(6);
-  ellipse(mouseX,mouseY,70,70);
-  stroke(255);
-  for(let i=0 ; i<taxis.length ; i++)
-  {
-    taxis[i].show()
-  }
-  stroke(0,102,204);
-  for(let i=0 ; i<busses.length ; i++)
-  {
-    busses[i].show()
-  }
-  stroke(255,0,0);
-  for(let i=0 ; i<undergrounds.length ; i++)
-  {
-    undergrounds[i].show()
-  }
-  stroke(0);
-  strokeWeight(5);
-  for(let i=0 ; i<nodes.length ; i++)
-  {
-    nodes[i].show()
-  }
-}
-
-function mouseClicked()
+function setup()
 {
-  if (keyIsPressed === true) {
-    if(key=='n')
-    {
-      console.log("N pressed")
-      let n = new Node(nodeNum, mouseX,mouseY);
-      nodes.push(n);
-      nodeNum++;
-    }
-    if(key=='t')
-    {
-      if(startPointSet==false)
-      {
-        startPointSet=true;
-        let nnIndex = findNearestNodeIndex(mouseX, mouseY);
-        console.log("Taxi started at" + (nodes[nnIndex].number));
-        thisTransport = new TaxiTransport();
-        thisTransport.startNode = nodes[nnIndex];
-        startNodeIndex = nnIndex;
-      }
-      else
-      {
-        endPointSet=true;
-        nnIndex = findNearestNodeIndex(mouseX, mouseY);
-        console.log("Taxi ended at" + (nodes[nnIndex].number));
-        thisTransport.endNode = nodes[nnIndex];
-        taxis.push(thisTransport);
-        endNodeIndex = nnIndex;
-        setTransport("taxi",startNodeIndex,endNodeIndex);
-        startPointSet = false;
-        endPointSet = false;
-        startNodeIndex = null;
-        endNodeIndex=null;
-      }
-    }
-    if(key=='b')
-    {
-      if(startPointSet==false)
-      {
-        startPointSet=true;
-        let nnIndex = findNearestNodeIndex(mouseX, mouseY);
-        console.log("Bus started at" + (nodes[nnIndex].number));
-        thisTransport = new BusTransport();
-        thisTransport.startNode = nodes[nnIndex];
-        startNodeIndex = nnIndex;
-      }
-      else
-      {
-        endPointSet=true;
-        nnIndex = findNearestNodeIndex(mouseX, mouseY);
-        console.log("Bus ended at" + (nodes[nnIndex].number));
-        thisTransport.endNode = nodes[nnIndex];
-        busses.push(thisTransport);
-        endNodeIndex = nnIndex;
-        setTransport("bus",startNodeIndex,endNodeIndex);
-        startPointSet = false;
-        endPointSet = false;
-        startNodeIndex = null;
-        endNodeIndex=null;
-      }
-    }
-    if(key=='u')
-    {
-      if(startPointSet==false)
-      {
-        startPointSet=true;
-        let nnIndex = findNearestNodeIndex(mouseX, mouseY);
-        console.log("Underground Rail started at" + (nodes[nnIndex].number));
-        thisTransport = new UndergroundTransport();
-        thisTransport.startNode = nodes[nnIndex];
-        startNodeIndex = nnIndex;
-      }
-      else
-      {
-        endPointSet=true;
-        nnIndex = findNearestNodeIndex(mouseX, mouseY);
-        console.log("Underground Rail ended at" + (nodes[nnIndex].number));
-        thisTransport.endNode = nodes[nnIndex];
-        undergrounds.push(thisTransport);
-        endNodeIndex = nnIndex;
-        setTransport("underground",startNodeIndex,endNodeIndex);
-        startPointSet = false;
-        endPointSet = false;
-        startNodeIndex = null;
-        endNodeIndex=null;
-      }
-    }
-  }
-}
-
-function findNearestNodeIndex(mX, mY)
-{
-  let minDist = 100;
-  let minIndex = -1;
-  for(let i=0 ; i<nodes.length ; i++)
-  {
-    let d = dist(mX, mY, nodes[i].x, nodes[i].y);
-    if(d<minDist)
-    {
-      minDist = d;
-      nnIndex = i;
-      if(d<50)
-      {
-        return i;
-      }
-    }
-  }
-  return minIndex;
-}
-
-function setTransport(transportType, sI, eI)
-{
-  if(transportType=="taxi")
-  {
-    if(!nodes[sI].taxi.includes(nodes[eI].number))
-    {
-      nodes[sI].taxi.push(nodes[eI].number);
-    }
-    if(!nodes[eI].taxi.includes(nodes[sI].number))
-    {
-      nodes[eI].taxi.push(nodes[sI].number);
-    }
-  }
-  if(transportType=="bus")
-  {
-    if(!nodes[sI].bus.includes(nodes[eI].number))
-    {
-      nodes[sI].bus.push(nodes[eI].number);
-    }
-    if(!nodes[eI].bus.includes(nodes[sI].number))
-    {
-      nodes[eI].bus.push(nodes[sI].number);
-    }
-  }
-  if(transportType=="underground")
-  {
-    if(!nodes[sI].underground.includes(nodes[eI].number))
-    {
-      nodes[sI].underground.push(nodes[eI].number);
-    }
-    if(!nodes[eI].underground.includes(nodes[sI].number))
-    {
-      nodes[eI].underground.push(nodes[sI].number);
-    }
-  }
-}
-
-function keyTyped()
-{
-  if(key=='m')
-  {
-    showMap = !showMap;
-  }
-  if(key=='d')
-  {
-    nodes.pop(); 
-    nodeNum--;
-  }
-}
-
-function downloadNodesJSON()
-{
-  let nodesListString = JSON.stringify(nodes);
-  console.log(nodesListString);
-  copyTextToClipboard(nodesListString);
-
-}
-
-function fallbackCopyTextToClipboard(text) {
-  var textArea = document.createElement("textarea");
-  textArea.value = text;
+  createCanvas(1200,600);
+  drawing = createGraphics(600,600);
+  drawing.background(240);
+  gridCanvas = createGraphics(600,600);
+  gridCanvas.background(240);
   
-  // Avoid scrolling to bottom
-  textArea.style.top = "0";
-  textArea.style.left = "0";
-  textArea.style.position = "fixed";
+  drawing.textAlign(CENTER,CENTER);
+  drawing.noStroke();
+  drawing.textSize(48);
+  drawing.fill(0,51);
+  drawing.text("DRAW HERE",300,50);
 
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
-
-  try {
-    var successful = document.execCommand('copy');
-    var msg = successful ? 'successful' : 'unsuccessful';
-    console.log('Fallback: Copying text command was ' + msg);
-  } catch (err) {
-    console.error('Fallback: Oops, unable to copy', err);
-  }
-
-  document.body.removeChild(textArea);
+  initializeGrid();
+  drawGrid();
+  createButtons();
 }
-function copyTextToClipboard(text) {
-  if (!navigator.clipboard) {
-    fallbackCopyTextToClipboard(text);
-    return;
+
+function createButtons()
+{
+  resetButton = createButton("Reset Drawing");
+  resetButton.mousePressed(resetDrawing)
+}
+
+function initializeGrid()
+{
+  if(gridDim<1)
+  {
+    gridDim = 1;
   }
-  navigator.clipboard.writeText(text).then(function() {
-    console.log('Async: Copying to clipboard was successful!');
-  }, function(err) {
-    console.error('Async: Could not copy text: ', err);
-  });
+  if(gridDim>60)
+  {
+    gridDim = 60;
+  }
+  rows = gridDim;
+  cols = gridDim;
+  wx = 600 / rows;
+  wy = 600 / cols;
+
+  for (let i = 0; i < rows; i++) {
+    let row = []
+    for (let j = 0; j < cols; j++) {
+      row.push(0);
+    }
+    grid.push(row)
+  } 
+}
+
+function drawGrid()
+{
+  pointR = round(map(gridDim,1,60,30,2));
+  gridCanvas.stroke(0);
+  for(let i=0 ; i<rows ; i++)
+  {
+    for(let j=0 ; j<cols ; j++)
+    {
+      gridCanvas.fill(255);
+      gridCanvas.ellipse(wx / 2 + i * wx, wy / 2 + j * wy, pointR, pointR);
+    }
+  }
+}
+
+function draw()
+{
+  image(drawing,600,0);
+  image(gridCanvas,0,0);
+  drawStructure();
+  stroke(0);
+  drawing.stroke(0);
+  drawing.strokeWeight(15);
+  if (mouseIsPressed === true) {
+    if (mouseX < 1200 && mouseX > 600 && mouseY < 600 && mouseY > 0) {
+      let x1 = pmouseX-600;
+      let x2 = mouseX - 600
+      drawing.line(x1, pmouseY, x2, mouseY);
+      let i1 = round(map(x1, 0, 600, 0, rows-1))
+      let j1 = round(map(pmouseY, 0, 600, 0, cols-1))
+      let i2 = round(map(x2,0,600,0,rows-1))
+      let j2 = round(map(mouseY, 0, 600, 0, cols-1))
+      if(lastPoint)
+      {
+        currentPoint = createVector(i2,j2);
+        if (p5.Vector.dist(lastPoint, currentPoint) > 0 && p5.Vector.dist(lastPoint, currentPoint)<2)
+        {
+          gridCanvas.strokeWeight(2);
+          gridCanvas.line(wx / 2 + lastPoint.x * wx, wy / 2 + lastPoint.y * wy, wx / 2 + currentPoint.x * wx, wy / 2 + currentPoint.y * wy);
+          lastPoint = currentPoint;
+        }
+      }
+      else
+      {
+        lastPoint = createVector(i1,j1);
+        currentPoint = createVector(i2,j2);
+      }
+      grid[i2][j2] = true;
+      gridCanvas.fill(0);
+      gridCanvas.ellipse(wx / 2 + i2 * wx, wy / 2 + j2 * wy, pointR, pointR);
+
+    }
+    else
+    {
+      lastPoint = null;
+    }
+  }
+  else
+  {
+    lastPoint = null;
+  }
+  
+}
+
+function drawStructure()
+{
+  fill(240);
+  stroke(0);
+  strokeWeight(2);
+  line(1,1,1199,1);
+  line(599,1,599,599);
+  line(1199,599,1,599);
+  line(1,599,1,1);
+  line(1199,1,1199,599);
+}
+
+function resetDrawing()
+{
+  location.reload();
 }
