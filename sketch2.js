@@ -2,7 +2,7 @@ let center;
 let radius = 250;
 let o1, o2;
 let o1Angle = 0, o2Angle = 212;
-let o1Phase = 0, o2Phase = 0;
+let o1Phase = 0, o2Phase = 120;
 let o1Speed = 1, o2Speed = 2;
 let pen;
 let drawingBoard;
