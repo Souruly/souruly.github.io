@@ -61,7 +61,7 @@ function createDomObjects() {
   startButton.mousePressed(startDraw);
   startButton.position(850, 400);
 
-  toggleOscillatorsDisplay = createButton("Toggle Guides");
+  toggleOscillatorsDisplay = createButton("Show/Hide Guides");
   toggleOscillatorsDisplay.mousePressed(toggleHideOscs);
   toggleOscillatorsDisplay.position(850, 450);
   // toggleOscillatorsDisplay.hide();
