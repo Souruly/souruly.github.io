@@ -10,7 +10,7 @@ let myIndex, myMorseChar, myMorseCode;
 let myBlanks;
 let currPointer;
 
-let animationMaxFrames = 5;
+let animationMaxFrames = 30;
 let animationFrameCounter = 0;
 let answer = true;
 
@@ -33,13 +33,14 @@ function getNewMorse(){
 function draw() {
   if(animationFrameCounter>0)
   {
+    let r = map(animationFrameCounter, 0, animationMaxFrames, 240, 0);
     if(answer)
     {
-      background(0,255,0);
+      background(r,240,r);
     }
     else
     {
-      background(255,0,0);
+      background(240,r,r);
 
     }
     animationFrameCounter -= 1
