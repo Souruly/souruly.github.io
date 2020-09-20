@@ -12,13 +12,19 @@ class Road {
     this.roadBuilder;
     this.roadBuilderVel = 0;
     this.roadWidthBy2 = 50;
+    this.stripeLength = 10;
 
     this.roadX = [];
     this.roadY = [];
     this.roadLength;
+    this.stripes = [];
+    this.numberOfStripes;
   }
 
   build() {
+    this.roadX = [];
+    this.roadY = [];
+    this.stripes = [];
     let equill = this.initVal;
     for (let x = 0; x < width; x += this.roadBuildJump) {
       let y = random(
@@ -37,10 +43,20 @@ class Road {
       this.roadY.push(this.positionY);
     }
     this.roadLength = this.roadX.length;
+    this.numberOfStripes = floor(this.roadLength/(2*this.stripeLength));
+    
+    for (let i = 0; i < this.numberOfStripes; i++) {
+      let stripeIndex = i*this.stripeLength*2
+      this.stripes.push(stripeIndex);
+      // console.log(stripeIndex);
+    }
+    // let a = [1,2,3,4];
+    // console.log(a);
+    
   }
 
   show() {
-    if (dark) {
+    if (sketchDark) {
       stroke(255);
     } else {
       stroke(0);
@@ -58,6 +74,14 @@ class Road {
       vertex(this.roadX[i], this.roadY[i] + this.roadWidthBy2);
     }
     endShape();
+
+    for (let i = 0; i < this.stripes.length; i++) {
+      let index = this.stripes[i];
+      if(index<this.roadLength)
+      {
+        ellipse(this.roadX[index], this.roadY[index],2,2);
+      }
+    }
   }
 
   update() {
@@ -76,6 +100,16 @@ class Road {
     this.vel = limitVal(this.vel, this.maxVel);
     this.positionY += this.vel;
     this.roadY.push(this.positionY);
+
+    for (let i = 0; i < this.stripes.length; i++) {
+      let xPos = this.stripes[i]-1;
+      if(xPos<0)
+      {
+        xPos = this.roadLength;
+      }
+      this.stripes[i] = xPos;
+      
+    }
   }
 }
 
