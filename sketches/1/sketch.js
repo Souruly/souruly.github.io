@@ -31,17 +31,10 @@ function draw() {
     background(255)
   }
 
-  // console.log("Value of sketchDark :" + sketchDark)
-  // console.log(window.location.pathname)
-
-  if (window.location.pathname == "/") {
-    road.show()
-    car.show(road)
-    car.update()
-    road.update()
-  } else {
-    noLoop()
-  }
+  road.show()
+  car.show(road)
+  car.update()
+  road.update()
 }
 
 function windowResized() {
