@@ -1,122 +1,161 @@
-// let winWidth = 1200;
-// let winHeight = 600;
+console.log("Loaded sketch 2");
 
-let morseChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0"]
-let morseCodes = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--..",".----","..---","...--","...--","....-",".....","--...","---..","----.","-----"]
+let sketchDark = false;
+let canvas;
 
-let dictSize = 36;
+let numberOfSegments = 3;
 
-let myIndex, myMorseChar, myMorseCode;
-let myBlanks;
-let currPointer;
+let segments = [];
+let angles = [];
+let buffer;
+let px, py, tx, ty;
 
-let animationMaxFrames = 30;
-let animationFrameCounter = 0;
-let answer = true;
+let timer = 1;
 
-function setup() {
-  createCanvas(windowWidth, windowWidth);
-  textAlign(CENTER, CENTER)
-  getNewMorse()
-}
+function resetSketch() {
+  segments = [];
+  px = 0, py = 0, tx = 0, ty = 0;
 
-function getNewMorse(){
-  myIndex = floor(random(36));
-  myMorseChar = morseChars[myIndex];
-  myMorseCode = morseCodes[myIndex];
-  currPointer = 0;
-  myBlanks = new Blanks(myMorseCode.length, myMorseCode);
-  animationFrameCounter = 0;
-  answer = true;
-}
+  canvas = createCanvas(windowWidth, windowHeight);
 
-function draw() {
-  if(animationFrameCounter>0)
-  {
-    let r = map(animationFrameCounter, 0, animationMaxFrames, 240, 0);
-    if(answer)
-    {
-      background(r,240,r);
-    }
-    else
-    {
-      background(240,r,r);
+  // numberOfSegments = floor(random(1,4));
+  numberOfSegments = 2;
 
-    }
-    animationFrameCounter -= 1
+  // angles = [2.4,6];
+  getAngles();
+
+  let l = max(windowWidth / 4 / numberOfSegments, 50);
+  // let l = floor((windowWidth/2-20)/numberOfSegments);
+  let seg0 = new Segment(windowWidth / 2, windowHeight / 2, l, 0, 0);
+  segments.push(seg0);
+  for (let i = 1; i < numberOfSegments; i++) {
+    let parent = segments[i - 1];
+    let seg = new Segment(parent.endPoint.x, parent.endPoint.y, l, 0, i);
+    seg.getInitialEndPoint();
+    segments.push(seg);
   }
-  else
-  {
-    background(240);
-  }
-  noStroke()
-  fill(0);
-  textSize(48);
-  text("MORSE TRAINER", width/2, 50);
-  textSize(120)
-  myBlanks.display();
-  text(morseChars[myIndex], width/2,300);
-  // text(morseCodes[myIndex], width/2,300);  
-  stroke(0);
-  strokeWeight(2);
-  // line(width/2, 0 , width/2, height);
-}
 
-function keyTyped()
-{
-  let currData = myMorseCode[currPointer]
-  if(key===currData)
-  {
-    myBlanks.correct += 1;
-    currPointer += 1
-    animationFrameCounter = animationMaxFrames;
-    answer = true;
-  }
-  else
-  {
-    if(key=='.' || key=='-')
-    {
-      animationFrameCounter = animationMaxFrames;
-      answer = false;
-    }
-  }
-  if(currPointer>=myMorseCode.length)
-  {
-    getNewMorse();
-  }
-  
-}
+  // for(let i=0 ; i<numberOfSegments ; i++)
+  // {
+  //   let a = round(random(-6,6));
+  //   if(i==0)
+  //   {
+  //     let da;
+  //     do{
+  //       da = round(random(-5,5));
+  //     }
+  //     while(da==0);
+  //     da = da/100;
+  //     a += da;
+  //   }
+  //   angles.push(a);
+  // }
 
-function Blanks(size,blankData)
-{
-  this.size = size;
-  this.data = blankData;
-  this.correct = 0;
-  this.halfBlankSize = 50;
-  this.interBlankDist = 20;
-  this.y = 450;
-
-  this.display = function()
-  {
-    let n = this.size;
-    let dispStart = width/2 - (n*this.halfBlankSize+(n-1)*(this.interBlankDist/2));
-    let dispX = dispStart;
-    for(let i=0 ; i<this.size ; i++)
-    {
-      stroke(0);
-      strokeWeight(5);
-      if(i<this.correct)
-      {
-        noStroke();
-        text(this.data[i], dispX+this.halfBlankSize, this.y);
-        stroke(0,255,0);
-      }
-      line(dispX, this.y+50, dispX + 2*this.halfBlankSize, this.y+50);
-      dispX += 2*this.halfBlankSize+this.interBlankDist;
-    }
-  }
+  buffer = createGraphics(windowWidth, windowHeight);
+  buffer.background(240);
+  background(240);
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resetSketch();
+  timer = frameCount;
+}
+
+function setup() {
+  ellipseMode(RADIUS);
+  textAlign(CENTER, TOP);
+  rectMode(CORNERS);
+  angleMode(DEGREES);
+  imageMode(CORNER);
+  colorMode(RGB);
+
+  resetSketch();
+  canvas.parent("canvasHolder");
+}
+
+function draw() {
+  background(240);
+  image(buffer, 0, 0);
+
+  for (let i = 0; i < numberOfSegments; i++) {
+    segments[i].show();
+  }
+
+  let l = segments.length;
+  tx = segments[l - 1].endPoint.x;
+  ty = segments[l - 1].endPoint.y;
+
+  buffer.stroke(0);
+  buffer.strokeWeight(2);
+  if (frameCount > timer) {
+    buffer.line(px, py, tx, ty);
+  }
+
+  for (let i = 0; i < numberOfSegments; i++) {
+    segments[i].update(angles[i], segments);
+  }
+  px = tx;
+  py = ty;
+}
+
+class Segment {
+  constructor(x, y, segLength, initAngle, index) {
+    this.startPoint = createVector(x, y);
+    this.length = segLength;
+    this.angle = initAngle;
+    this.endPoint = createVector(0, 0);
+    this.index = index;
+
+    this.getInitialEndPoint();
+  }
+
+  getInitialEndPoint() {
+    let x = this.startPoint.x + this.length * cos(this.angle);
+    let y = this.startPoint.y + this.length * sin(this.angle);
+    this.endPoint.set(x, y);
+  }
+
+  update(dtheta, segments) {
+    if (this.index == 0) {
+      this.angle += dtheta;
+      let x = this.startPoint.x + this.length * cos(this.angle);
+      let y = this.startPoint.y + this.length * sin(this.angle);
+      this.endPoint.set(x, y);
+    } else {
+      this.startPoint = segments[this.index - 1].endPoint.copy();
+      this.angle += dtheta;
+      let x = this.startPoint.x + this.length * cos(this.angle);
+      let y = this.startPoint.y + this.length * sin(this.angle);
+      this.endPoint.set(x, y);
+    }
+  }
+
+  show() {
+    stroke(192);
+    strokeWeight(2);
+    line(
+      this.startPoint.x,
+      this.startPoint.y,
+      this.endPoint.x,
+      this.endPoint.y
+    );
+  }
+}
+
+function getAngles() {
+  angles = [];
+  let seedAngle = floor(random(2, 5));
+  angles.push(seedAngle);
+
+  commonMultiples = [2, 3, 5, 7, 11];
+
+  for (let i = 1; i < numberOfSegments; i++) {
+    let r1 = floor(random(8, 88));
+    let n1 = seedAngle * r1;
+    let a = n1 / 10;
+    if (a > 20) {
+      a = n1 / 100;
+    }
+    angles[i] = a;
+  }
 }
