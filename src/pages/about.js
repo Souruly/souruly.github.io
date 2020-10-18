@@ -1,16 +1,11 @@
 import React from "react"
 import { PageLayout } from "../components"
-import { GlobalStyles, BigTitle } from "../styles/global-styles"
-// import Image from "react-bootstrap/Image"
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import { Image, Container, Text } from "../styles/page-styles/about/about"
+import { Image, Container} from "../styles/page-styles/about/about"
 import { Link } from "gatsby"
 
 export default function About() {
   return (
-    <PageLayout>
-      <GlobalStyles />
-      <BigTitle>About Me</BigTitle>
+    <PageLayout title="About Me">
       <Container>
         <Image
           fluid
