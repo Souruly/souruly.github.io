@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-blog-js","path":"/blog/","result":{"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-blog-js","path":"/blog/","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"title":"Blank Post"},"fields":{"slug":"/blog/20201015 - Blank Post/blank/"}}},{"node":{"frontmatter":{"title":"First Post"},"fields":{"slug":"/blog/20201018 - First Post/basic/"}}}]}},"pageContext":{}},"staticQueryHashes":[]}
