@@ -6,6 +6,7 @@ export const BirdRow = styled.div`
   align-items: center;
   border: 2px solid var(--customDarkGrey);
   width: 60%;
+  max-width: 800px;
 
   @media (max-width: 600px) {
     flex-direction: column;
