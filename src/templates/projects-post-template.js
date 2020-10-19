@@ -18,7 +18,7 @@ const SubTitle = ({ ttr, date, author }) => (
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <PageLayout title="Blog Post">
+    <PageLayout title="Project Post">
       <PostTitle>{post.frontmatter.title}</PostTitle>
       <SubTitle
         ttr={post.timeToRead}

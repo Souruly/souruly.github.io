@@ -11,7 +11,3 @@ export const Container = styled.div`
 export const Image = styled.img`
   border-radius: 50%;
 `
-
-export const Text = styled.p`
-
-`;

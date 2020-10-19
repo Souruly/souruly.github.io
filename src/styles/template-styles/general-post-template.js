@@ -6,7 +6,7 @@ export const PostTitle = styled.h1`
   align-items: center;
   justify-content: center;
   font-size: 5rem;
-  margin: 5px;
+  margin: 20px;
   font-style: italic;
 
   @media (max-width: 600px) {
@@ -36,7 +36,22 @@ export const PostSubTitle = styled.ul`
 export const PostContent = styled.div`
   margin:20px;
 
+  code {
+    color:orange;
+    background: var(--customDarkGrey);
+    padding: 0 5px;
+  }
+
+  pre {
+    background: var(--customDarkGrey);
+    padding: 5px;
+    max-width: 800px;
+    margin:none;
+  }
+
   @media (max-width: 600px) {
-    
+    pre {
+        width:100%;
+      }
   }
 `

@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav"
 import NavDropdown from "react-bootstrap/NavDropdown"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles/navbar.css"
+import { Link } from "gatsby"
 
 export default function index({ children, ...restProps }) {
   return (
@@ -24,18 +25,21 @@ export default function index({ children, ...restProps }) {
         className="justify-content-end"
       >
         <Nav className="justify-content-end">
-          <Nav.Link className="ml-2" href="/blog" title="Blog">
+          <Nav.Link  className="ml-2" as={Link} to="/blog" title="Blog">
             Blog
           </Nav.Link>
-          <Nav.Link className="ml-2" href="/projects" title="Projects">
+          <Nav.Link className="ml-2" as={Link} to="/projects" title="Projects">
             Projects
           </Nav.Link>
           <NavDropdown
-            title="My Lists"
+            title="Other Pages"
             id="collapsible-nav-dropdown"
             className="pl-2 text-left bg-black"
           >
-            <NavDropdown.Item className="ml-2" href="/birdsList">
+            <NavDropdown.Item className="ml-2" as={Link} to="/notes">
+              Notes
+            </NavDropdown.Item>
+            <NavDropdown.Item className="ml-2" as={Link} to="/birdsList">
               List of Birds in Pune
             </NavDropdown.Item>
             {/* <NavDropdown.Item className="ml-2" href="/about">
@@ -45,7 +49,7 @@ export default function index({ children, ...restProps }) {
               Movies List
             </NavDropdown.Item> */}
           </NavDropdown>
-          <Nav.Link className="ml-2" href="/about" title="About">
+          <Nav.Link className="ml-2" as={Link} to="/about" title="About">
             About Me
           </Nav.Link>
         </Nav>

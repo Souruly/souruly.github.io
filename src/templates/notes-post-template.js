@@ -1,26 +1,30 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { PageLayout } from "../components"
+import {
+  PostTitle,
+  PostSubTitle,
+  PostContent,
+} from "../styles/template-styles/general-post-template"
 
 const SubTitle = ({ ttr, date, author }) => (
-  <h5 className="text-muted mb-5">
-    Time to read: {ttr} <small>min</small> | {date} | {author}
-  </h5>
+  <PostSubTitle>
+    <li>{date}</li>
+  </PostSubTitle>
 )
 
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <PageLayout title="Project Post">
-      <h1>{post.frontmatter.title}</h1>
-
+    <PageLayout title="'How I' -  Post">
+      <PostTitle>{post.frontmatter.title}</PostTitle>
       <SubTitle
         ttr={post.timeToRead}
         date={post.frontmatter.date}
         author={post.frontmatter.author}
       />
 
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
     </PageLayout>
   )
 }

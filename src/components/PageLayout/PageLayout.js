@@ -1,17 +1,18 @@
 import React from "react"
 import { Navbar } from "../index"
 import { Footer } from "./styles/PageLayoutStyle"
-import { GlobalStyles, BigTitle } from "../../styles/global-styles"
+import { GlobalStyles, BigTitle, MediumTitle } from "../../styles/global-styles"
 
 
-export default function index({ children, title , ...restProps}) {
+export default function index({ children, bigTitle , mediumTitle, ...restProps}) {
   return (
     <>
       <GlobalStyles/>
       <Navbar />
-      <BigTitle>{title}</BigTitle>
+      <BigTitle>{bigTitle}</BigTitle>
+      <MediumTitle>{mediumTitle}</MediumTitle>
         {children}
-      <Footer>Footer</Footer>
+      <Footer>Sourav Kulkarni | 2020</Footer>
     </>
   )
 }

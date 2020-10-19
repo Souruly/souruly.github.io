@@ -3,7 +3,7 @@ import { PageLayout } from "../components"
 
 export default function Home() {
   return (
-    <PageLayout title="Sourav Kulkarni">
+    <PageLayout bigTitle="Sourav Kulkarni">
 
     </PageLayout>
   )

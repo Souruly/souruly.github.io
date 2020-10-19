@@ -1,15 +1,13 @@
 import React from "react"
 import { PageLayout } from "../components"
-import { Image, Container} from "../styles/page-styles/about/about"
+import { Image, Container} from "../styles/page-styles/about"
 import { Link } from "gatsby"
 
 export default function About() {
   return (
-    <PageLayout title="About Me">
+    <PageLayout bigTitle="About Me">
       <Container>
         <Image
-          fluid
-          roundedCircle
           width="340"
           height="340"
           src={`../../mydata/profilePicture.jpg`}
