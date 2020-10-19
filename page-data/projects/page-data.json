@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-projects-js","path":"/projects/","result":{"pageContext":{}},"staticQueryHashes":[]}
+{"componentChunkName":"component---src-pages-projects-js","path":"/projects/","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/projects/20201018 - First Post/basic/"},"frontmatter":{"title":"First Post","date":"2020-10-18"},"id":"fe78a9ed-3c2e-52fc-ae42-e7ab5d3448da"}}]}},"pageContext":{}},"staticQueryHashes":[]}

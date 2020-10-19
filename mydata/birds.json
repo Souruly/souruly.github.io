@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "birdName": "Alexandrine Parakeet",
+        "birdLink" : "https://en.wikipedia.org/wiki/Alexandrine_Parakeet",
+        "imgLink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Alexandrine_Parakeet-_Male_at_nest_I_IMG_5867.jpg/220px-Alexandrine_Parakeet-_Male_at_nest_I_IMG_5867.jpg",
+        "location": "At Home",
+        "locationLink": "https://goo.gl/maps/jWWWrkM7GPRDoBjy6"
+    },
+    {
+        "id": 2,
+        "birdName": "Purple Sunbird",
+        "birdLink" : "https://en.wikipedia.org/wiki/Purple_sunbird",
+        "imgLink": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Purple_Sunbird_%28Nectarinia_asiatica%29-_Male_%28Breeding%29_on_Kapok_%28Ceiba_pentandra%29_in_Kolkata_I_IMG_1893.jpg/220px-Purple_Sunbird_%28Nectarinia_asiatica%29-_Male_%28Breeding%29_on_Kapok_%28Ceiba_pentandra%29_in_Kolkata_I_IMG_1893.jpg",
+        "location": "ARAI",
+        "locationLink": "https://goo.gl/maps/CPToLUNVVXKdBufVA"
+    }
+]
