@@ -4,7 +4,7 @@ tags: ["Hello World"]
 description: "999"
 author: "Sourav Kulkarni"
 date: "2020-10-18"
-type: "Coding"
+type: "Code"
 ---
 
 ---
@@ -18,7 +18,7 @@ So I **deleted the entire dev branch using the Github UI**, and then **deleted a
 <br/><br/><br/>
 
 #### Install gh-pages package
-`npm install gh-pages --seve -dev`
+`npm install gh-pages --save-dev`
 <br/><br/><br/>
 
 #### Add script to package.json
@@ -42,4 +42,12 @@ Add a deployment script to package.json :
 
 #### Deploy and see result : 
 `npm run deploy`
+<br/><br/><br/>
+
+#### Steps for future deployments : 
+After your first deployment, whenever you make any change to your project, just do the following steps to sync them up with the remote repo and to deploy the updated website.
+* `git add .`
+* `git commit -m "Commit Message`
+* `git push origin dev`
+* `npm run deploy`
 <br/><br/><br/>

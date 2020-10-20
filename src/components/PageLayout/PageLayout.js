@@ -12,6 +12,7 @@ export default function index({ children, bigTitle , mediumTitle, ...restProps})
       <BigTitle>{bigTitle}</BigTitle>
       <MediumTitle>{mediumTitle}</MediumTitle>
         {children}
+      <br/>
       <Footer>Sourav Kulkarni | 2020</Footer>
     </>
   )

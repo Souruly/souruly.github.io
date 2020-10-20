@@ -29,12 +29,12 @@ export const PostSubTitle = styled.ul`
     width:80%;
     flex-direction:column;
     font-size: 1rem;
-    font-weight: normal;
   }
 `
 
 export const PostContent = styled.div`
   margin:20px;
+  word-wrap: break-word;
 
   code {
     color:orange;

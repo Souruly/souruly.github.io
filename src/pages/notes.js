@@ -14,10 +14,13 @@ export default function How({ data }) {
           .map(({ node: post }) => {
             return (
               <PostListItem className="blog-post-preview" key={post.id}>
-                  <p>
+                <p>
                   {post.frontmatter.date} | &nbsp;
+                  {post.frontmatter.type && (
+                    <>{post.frontmatter.type} | &nbsp;</>
+                  )}
                   <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-                  </p>
+                </p>
                 {/* <h2>{post.frontmatter.date}</h2> */}
                 {/* <p>{post.excerpt}</p> */}
               </PostListItem>
@@ -39,6 +42,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date
+            type
           }
           id
         }

@@ -9,7 +9,7 @@ import {
 
 const SubTitle = ({ ttr, date, author }) => (
   <PostSubTitle>
-    <li>Time to read: {ttr} <small> min&nbsp;</small> </li>
+    <li>Time to read: {ttr} min</li>
     <li>{date}</li>
     <li>{author}</li>
   </PostSubTitle>

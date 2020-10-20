@@ -3,26 +3,28 @@ import { Container } from "../styles/global-styles"
 import { PageLayout } from "../components"
 import birdsList from "../../static/mydata/birds.json"
 
-import {
-  BirdRow,
-  Image,
-  Location,
-  Species,
-} from "../styles/page-styles/birdsList"
+import { StyledTable } from "../styles/page-styles/birdsList"
 
 export default function Home() {
-  const Row = bird => (
-    <BirdRow key={bird.id}>
-      <Image fluid src={bird.imgLink} alt={bird.birdName} />
-      <Species href={bird.birdLink}>{bird.birdName}</Species>
-      <Location href={bird.locationLink}>{bird.location}</Location>
-    </BirdRow>
+  const TableRow = bird => (
+    <tr key={bird.id}>
+      <td>{bird.species}</td>
+      <td>{bird.location}</td>
+      <td>{bird.rarity}</td>
+      <td>{bird.characteristics}</td>
+    </tr>
   )
 
-  const birds = birdsList.map(bird => Row(bird))
+  const headings = birdsList.columns.map(heading => <th>{heading.label}</th>)
+  const birds = birdsList.rows.map(bird => TableRow(bird))
   return (
     <PageLayout bigTitle="Birds">
-      <Container>{birds}</Container>
+      <Container>
+        <StyledTable>
+          <tr>{headings}</tr>
+          {birds}
+        </StyledTable>
+      </Container>
     </PageLayout>
   )
 }

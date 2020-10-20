@@ -1,31 +1,18 @@
 import styled from "styled-components/macro"
 
-export const BirdRow = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 2px solid var(--customDarkGrey);
-  width: 60%;
-  max-width: 800px;
+export const StyledTable = styled.table`
+  width:90%;
+  padding:10px;
+  margin:10px;
+  border: 1px solid black;
+  text-align: center;
+  font-weight : normal;
 
-  @media (max-width: 600px) {
-    flex-direction: column;
-    justify-content: space-around;
-    width:95%;
+  th, td {
+    border: 1px solid black;
   }
-`
-export const Image = styled.img`
-  padding: 10px;
-  height: auto;
-  width: 40%;
 
-  @media (max-width: 600px) {
-    width: 100%;
+  tr:nth-child(even) {
+    background-color: lightGrey;
   }
-`
-
-export const Species = styled.a`
-
-`
-
-export const Location = styled.a``
+`;

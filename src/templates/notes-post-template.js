@@ -7,8 +7,10 @@ import {
   PostContent,
 } from "../styles/template-styles/general-post-template"
 
-const SubTitle = ({ ttr, date, author }) => (
+const SubTitle = ({ ttr, date, type }) => (
   <PostSubTitle>
+    <li>Time to read: {ttr} min</li>
+    <li>Category : {type}</li>
     <li>{date}</li>
   </PostSubTitle>
 )
@@ -21,7 +23,7 @@ export default ({ data }) => {
       <SubTitle
         ttr={post.timeToRead}
         date={post.frontmatter.date}
-        author={post.frontmatter.author}
+        type={post.frontmatter.type}
       />
 
       <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -36,6 +38,7 @@ export const query = graphql`
       frontmatter {
         title
         author
+        type
         date(formatString: "DD MMMM, YYYY")
       }
       excerpt
