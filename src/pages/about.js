@@ -10,7 +10,7 @@ export default function About() {
         <Image
           width="340"
           height="340"
-          src={`../../mydata/profilePicture.jpg`}
+          src={`../../mydata/profilePicture.jpg` }
           alt="Sourav Kulkarni"
         />
       </Container>
