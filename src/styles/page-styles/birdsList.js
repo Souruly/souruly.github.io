@@ -2,6 +2,7 @@ import styled from "styled-components/macro"
 
 export const StyledTable = styled.table`
   width: 90%;
+  max-width : 800px;
   padding: 10px;
   margin: 10px;
   border: 1px solid black;
