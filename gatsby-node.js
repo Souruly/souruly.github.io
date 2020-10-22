@@ -61,3 +61,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   })
 }
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  if (process.env.NODE_ENV !== 'development') {
+    actions.setBabelPlugin({
+      name: '@babel/plugin-transform-regenerator',
+      options: {},
+    });
+    actions.setBabelPlugin({
+      name: '@babel/plugin-transform-runtime',
+      options: {},
+    });
+  }
+};
