@@ -23,8 +23,8 @@ export const StyledTable = styled.table`
   }
 
   thead button:focus {
-    border:none;
-    outLine: none;
+    border: none;
+    outline: none;
     background: white;
     color: var(--customDarkGrey);
   }
@@ -37,18 +37,48 @@ export const StyledTable = styled.table`
   }
 
   thead button::after {
-    content: ' ↕';
+    content: " ↕";
   }
 
   thead button.ascending::after {
-    content: ' ↓';
+    content: " ↓";
   }
 
   thead button.descending::after {
-    content: ' ↑';
+    content: " ↑";
   }
 
   tbody {
     width: 90%;
+  }
+`
+
+export const TableContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  padding: 1rem;
+
+  table {
+    border: 2px solid black;
+    text-align : center;
+    width : 90%;
+    max-width : 800px;
+
+    th{ 
+      background : var(--customDarkGrey);
+      color: white;
+    }
+
+    th,
+    td {
+      border 1px solid black;
+      margin: 0;
+      padding: 0.5rem;
+    }
   }
 `

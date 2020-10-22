@@ -1,110 +1,160 @@
 import React from "react"
-import { Container } from "../styles/global-styles"
 import { PageLayout } from "../components"
 import { birds } from "../listData/birdsList"
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+  useAsyncDebounce,
+} from "react-table"
 
-import { StyledTable } from "../styles/page-styles/birdsList"
+import { TableContainer } from "../styles/page-styles/birdsList"
 
-const useSortableData = (items, config = null) => {
-  const [sortConfig, setSortConfig] = React.useState(config)
-
-  const sortedItems = React.useMemo(() => {
-    let sortableItems = [...items]
-    if (sortConfig !== null) {
-      sortableItems.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? -1 : 1
-        }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? 1 : -1
-        }
-        return 0
-      })
-    }
-    return sortableItems
-  }, [items, sortConfig])
-
-  const requestSort = key => {
-    let direction = "ascending"
-    if (
-      sortConfig &&
-      sortConfig.key === key &&
-      sortConfig.direction === "ascending"
-    ) {
-      direction = "descending"
-    }
-
-    // if (
-    //   sortConfig &&
-    //   sortConfig.key === key &&
-    //   sortConfig.direction === "descending"
-    // ) {
-    //   direction = undefined
-    // }
-
-    // if (
-    //   sortConfig &&
-    //   sortConfig.key === key &&
-    //   sortConfig.direction === undefined
-    // ) {
-    //   direction = "ascending"
-    // }
-    setSortConfig({ key, direction })
-  }
-
-  return { items: sortedItems, requestSort, sortConfig }
-}
-
-const DataTable = props => {
-  const { items, requestSort, sortConfig } = useSortableData(props.data)
-
-  const getClassNamesFor = name => {
-    if (!sortConfig) {
-      return
-    }
-    return sortConfig.key === name ? sortConfig.direction : undefined
-  }
-
-  const renderHeadings = props.headings.map(heading => (
-    <th key={heading.field}>
-      <button
-        type="button"
-        onClick={() => requestSort(heading.field)}
-        className={getClassNamesFor(heading.field)}
-      >
-        {heading.name}
-      </button>
-    </th>
-  ))
-
-  const renderData = items.map(item => (
-    <tr key={item.id}>
-      <td>{item.species}</td>
-      <td>{item.rarity}</td>
-      <td>
-        <a href={item.locationLink} target="_blank" rel="noreferrer">
-          {item.location}
-        </a>
-      </td>
-    </tr>
-  ))
+// Define a default UI for filtering
+function GlobalFilter({
+  preGlobalFilteredRows,
+  globalFilter,
+  setGlobalFilter,
+}) {
+  const count = preGlobalFilteredRows.length
+  const [value, setValue] = React.useState(globalFilter)
+  const onChange = useAsyncDebounce(value => {
+    setGlobalFilter(value || undefined)
+  }, 200)
 
   return (
-    <StyledTable>
-      <thead>
-        <tr>{renderHeadings}</tr>
-      </thead>
-      <tbody>{renderData}</tbody>
-    </StyledTable>
+    <span>
+      Search :{" "}
+      <input
+        value={value || ""}
+        onChange={e => {
+          setValue(e.target.value)
+          onChange(e.target.value)
+        }}
+        placeholder={`${count} records...`}
+        style={{
+          fontSize: "1.1rem",
+          border: "0",
+        }}
+      />
+    </span>
   )
 }
 
+// Our table component
+function Table({ columns, data }) {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    state,
+    visibleColumns,
+    preGlobalFilteredRows,
+    setGlobalFilter,
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useGlobalFilter, // useGlobalFilter!
+    useSortBy
+  )
+
+  const firstPageRows = rows.slice(0, 100)
+
+  return (
+    <>
+      <table {...getTableProps()}>
+        <thead>
+          {headerGroups.map(headerGroup => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map(column => (
+                <th
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  {column.render("Header")}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? " ↑"
+                        : " ↓"
+                      : " ↕"}
+                  </span>
+                </th>
+              ))}
+            </tr>
+          ))}
+          <tr>
+            <th
+              colSpan={visibleColumns.length}
+              style={{
+                textAlign: "center",
+              }}
+            >
+              <GlobalFilter
+                preGlobalFilteredRows={preGlobalFilteredRows}
+                globalFilter={state.globalFilter}
+                setGlobalFilter={setGlobalFilter}
+              />
+            </th>
+          </tr>
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {firstPageRows.map((row, i) => {
+            prepareRow(row)
+            return (
+              <tr {...row.getRowProps()}>
+                {row.cells.map(cell => {
+                  return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                })}
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+      <br />
+    </>
+  )
+}
+
+
 export default function Home() {
+
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "Species Name",
+        accessor: "species",
+        // Use our custom `fuzzyText` filter on this column
+        sortType: "basic",
+      },
+      {
+        Header: "Rarity",
+        accessor: "rarity",
+        sortType: "basic",
+      },
+      {
+        Header: "Location",
+        accessor: "location",
+      },
+    ],
+
+    []
+  )
+
+  const data = React.useMemo(() => birds.rows, [])
+
   return (
     <PageLayout bigTitle="Birds">
-      <Container>
-        <DataTable headings={birds.headings} data={birds.rows} />
-      </Container>
+      <TableContainer>
+        <Table columns={columns} data={data} />
+        {/* <DataTable headings={birds.headings} data={birds.rows} /> */}
+      </TableContainer>
     </PageLayout>
   )
 }
