@@ -5,24 +5,68 @@ import { birds } from "../listData/birdsList"
 
 import { StyledTable } from "../styles/page-styles/birdsList"
 
-const useSortableData = (items, config = null) => {
-  const [sortConfig, setSortConfig] = React.useState(config)
+function useTable({ headings, data }) {
+  const [globalFilter, setGlobalFilter] = React.useState("")
 
-  const sortedItems = React.useMemo(() => {
-    let sortableItems = [...items]
-    if (sortConfig !== null) {
-      sortableItems.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? -1 : 1
-        }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? 1 : -1
-        }
-        return 0
-      })
+  return {
+    initialColumns: headings,
+    initialRows: data,
+    globalFilter,
+    setGlobalFilter,
+  }
+}
+
+function GlobalFilter({ dataLength, setFilterTerm }) {
+  const [value, setValue] = React.useState("")
+
+  function onChange(sVal) {
+    setFilterTerm(sVal)
+    setValue(sVal)
+  }
+
+  return (
+    <span>
+      Search :{" "}
+      <input
+        value={value || ""}
+        onChange={e => {
+          onChange(e.target.value)
+        }}
+        placeholder={`Species Name`}
+      />
+      &nbsp; : {dataLength} records
+    </span>
+  )
+}
+
+function useGlobalFilter(items, searchTerm) {
+  let filteredItems = []
+
+  items.forEach(item => {
+    let species = item.species.toLowerCase()
+    if (species.includes(searchTerm.toLowerCase())) {
+      filteredItems.push(item)
     }
-    return sortableItems
-  }, [items, sortConfig])
+  })
+
+  return filteredItems
+}
+
+const useSort = (items, config = null) => {
+  const [sortConfig, setSortConfig] = React.useState(config)
+  
+  let sortableItems = items
+  if (sortConfig !== null) {
+    sortableItems.sort((a, b) => {
+      if (a[sortConfig.key] < b[sortConfig.key]) {
+        return sortConfig.direction === "ascending" ? -1 : 1
+      }
+      if (a[sortConfig.key] > b[sortConfig.key]) {
+        return sortConfig.direction === "ascending" ? 1 : -1
+      }
+      return 0
+    })
+  }
 
   const requestSort = key => {
     let direction = "ascending"
@@ -34,29 +78,23 @@ const useSortableData = (items, config = null) => {
       direction = "descending"
     }
 
-    // if (
-    //   sortConfig &&
-    //   sortConfig.key === key &&
-    //   sortConfig.direction === "descending"
-    // ) {
-    //   direction = undefined
-    // }
-
-    // if (
-    //   sortConfig &&
-    //   sortConfig.key === key &&
-    //   sortConfig.direction === undefined
-    // ) {
-    //   direction = "ascending"
-    // }
     setSortConfig({ key, direction })
   }
 
-  return { items: sortedItems, requestSort, sortConfig }
+  return { sortedItems: sortableItems, requestSort, sortConfig }
 }
 
-const DataTable = props => {
-  const { items, requestSort, sortConfig } = useSortableData(props.data)
+function DataTable({ headings, data }) {
+  const {
+    initialColumns,
+    initialRows,
+    globalFilter,
+    setGlobalFilter,
+  } = useTable({ headings, data })
+
+  const filteredItems = useGlobalFilter(initialRows, globalFilter)
+
+  const { sortedItems, requestSort, sortConfig } = useSort(filteredItems)
 
   const getClassNamesFor = name => {
     if (!sortConfig) {
@@ -65,7 +103,7 @@ const DataTable = props => {
     return sortConfig.key === name ? sortConfig.direction : undefined
   }
 
-  const renderHeadings = props.headings.map(heading => (
+  const renderHeadings = headings.map(heading => (
     <th key={heading.field}>
       <button
         type="button"
@@ -77,7 +115,7 @@ const DataTable = props => {
     </th>
   ))
 
-  const renderData = items.map(item => (
+  const renderData = sortedItems.map(item => (
     <tr key={item.id}>
       <td>{item.species}</td>
       <td>{item.rarity}</td>
@@ -93,6 +131,14 @@ const DataTable = props => {
     <StyledTable>
       <thead>
         <tr>{renderHeadings}</tr>
+        <tr>
+          <th colSpan={3}>
+            <GlobalFilter
+              dataLength={filteredItems.length}
+              setFilterTerm={setGlobalFilter}
+            />
+          </th>
+        </tr>
       </thead>
       <tbody>{renderData}</tbody>
     </StyledTable>
