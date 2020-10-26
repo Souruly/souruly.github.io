@@ -120,9 +120,9 @@ function DataTable({ headings, data }) {
       <td>{item.species}</td>
       <td>{item.rarity}</td>
       <td>
-        <a href={item.locationLink} target="_blank" rel="noreferrer">
+        {/* <a href={item.locationLink} target="_blank" rel="noreferrer"> */}
           {item.location}
-        </a>
+        {/* </a> */}
       </td>
     </tr>
   ))

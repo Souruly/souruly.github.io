@@ -40,7 +40,7 @@ export default function index({ children, ...restProps }) {
               Notes
             </NavDropdown.Item>
             <NavDropdown.Item className="ml-2" as={Link} to="/birdsList">
-              List of Birds in Pune
+              Birdwatching Journal
             </NavDropdown.Item>
             {/* <NavDropdown.Item className="ml-2" href="/about">
               Books List
