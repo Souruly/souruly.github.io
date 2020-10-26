@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{RXBc:function(n,t,e){"use strict";e.r(t),e.d(t,"default",(function(){return a}));var r=e("q1tI"),u=e.n(r),i=e("Kvkj");function a(){return u.a.createElement(i.b,{bigTitle:"Sourav Kulkarni"})}}}]);
+//# sourceMappingURL=component---src-pages-index-js-65f0fdca764b9e077728.js.map
