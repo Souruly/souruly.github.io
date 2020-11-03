@@ -120,9 +120,11 @@ function DataTable({ headings, data }) {
       <td>{item.species}</td>
       <td>{item.rarity}</td>
       <td>
-        {/* <a href={item.locationLink} target="_blank" rel="noreferrer"> */}
           {item.location}
-        {/* </a> */}
+      </td>
+      <td>
+        <p dangerouslySetInnerHTML={{__html: item.notes}} />
+          {/* {item.notes} */}
       </td>
     </tr>
   ))
@@ -132,7 +134,7 @@ function DataTable({ headings, data }) {
       <thead>
         <tr>{renderHeadings}</tr>
         <tr>
-          <th colSpan={3}>
+          <th colSpan={headings.length}>
             <GlobalFilter
               dataLength={filteredItems.length}
               setFilterTerm={setGlobalFilter}

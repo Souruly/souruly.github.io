@@ -52,6 +52,12 @@ export const StyledTable = styled.table`
   tbody {
     width: 90%;
   }
+
+  td p {
+    @media (max-width: 600px) {
+      display:none;
+    }
+  }
 `
 
 export const TableContainer = styled.div`
