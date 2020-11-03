@@ -14,10 +14,29 @@ export const StyledTable = styled.table`
     border: 1px solid black;
   }
 
-  tr:nth-child(even) {
+  
+  tbody tr:nth-child(4n+1) {
     background-color: lightGrey;
   }
+  
+  @media (max-width: 600px) {
+    tbody tr:nth-child(4n+3) {
+      background-color: lightGrey;
+    }
 
+    tbody tr:nth-child(4n+4) {
+      background-color: lightGrey;
+    }
+
+    tbody tr:nth-child(4n+1) {
+      background-color: inherit;
+    }
+
+    tbody tr:nth-child(4n+2) {
+      background-color: inherit;
+    }
+  }
+      
   thead {
     text-align: center;
     background: var(--customDarkGrey);
@@ -53,9 +72,17 @@ export const StyledTable = styled.table`
     width: 90%;
   }
 
-  td p {
+  td.itemNotesCell p{
     @media (max-width: 600px) {
       display:none;
+    }
+  }
+
+  tr.itemNotesRow{
+    display:none;
+    @media (max-width: 600px) {
+      display:revert;
+      border-bottom: 2px solid black;    
     }
   }
 `

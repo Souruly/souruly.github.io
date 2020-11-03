@@ -30,7 +30,7 @@ export const birds = {
       species: "Red Naped Ibis",
       rarity: 1,
       location: "Everywhere",
-      notes: "Very common around water bodies in Pune. I have seen these many times while travelling on the Mula-Mutha riverside roads. I've also seen an individual near the Pashan lake and one individual at Mahatma Society Hill in Kothrud. <br/> The bird looks quite spooky - its large body is black, oddly shaped, and seems to have uneven weight distribution. It hase a red patch on its head with yellow eyes.",
+      notes: "Very common around water bodies in Pune. I have seen these many times while travelling on the Mula-Mutha riverside roads. I've also seen an individual near the Pashan lake and one individual at Mahatma Society Hill in Kothrud. <br/> The bird looks quite spooky - its large body is black, oddly shaped, and seems to have uneven weight distribution. It has a red patch on its head with yellow eyes.",
     },
     {
       id: 3,

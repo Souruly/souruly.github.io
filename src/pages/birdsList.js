@@ -116,17 +116,24 @@ function DataTable({ headings, data }) {
   ))
 
   const renderData = sortedItems.map(item => (
-    <tr key={item.id}>
-      <td>{item.species}</td>
-      <td>{item.rarity}</td>
-      <td>
-          {item.location}
-      </td>
-      <td>
-        <p dangerouslySetInnerHTML={{__html: item.notes}} />
-          {/* {item.notes} */}
-      </td>
-    </tr>
+    <React.Fragment key={item.id}>
+      <tr>
+        <td>{item.species}</td>
+        <td>{item.rarity}</td>
+        <td>
+            {item.location}
+        </td>
+        <td className="itemNotesCell">
+          <p dangerouslySetInnerHTML={{__html: item.notes}} />
+            {/* {item.notes} */}
+        </td>
+      </tr>
+      <tr className="itemNotesRow">
+        <td colSpan={Object.keys(item).length}>
+          <p dangerouslySetInnerHTML={{__html: item.notes}} />
+        </td>
+      </tr>
+    </React.Fragment>
   ))
 
   return (
