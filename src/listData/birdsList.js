@@ -30,7 +30,7 @@ export const birds = {
       species: "Red Naped Ibis",
       rarity: 1,
       location: "Everywhere",
-      notes: "Very common around water bodies in Pune. I have seen these many times while travelling on the Mula-Mutha riverside roads. I've also seen an individual near the Pashan lake and one individual at Mahatma Society Hill in Kothrud. <br/> The bird looks quite spooky - its large body is black, oddly shaped, and seems to have uneven weight distribution. It hase a red patch on it's head with yellow eyes.",
+      notes: "Very common around water bodies in Pune. I have seen these many times while travelling on the Mula-Mutha riverside roads. I've also seen an individual near the Pashan lake and one individual at Mahatma Society Hill in Kothrud. <br/> The bird looks quite spooky - its large body is black, oddly shaped, and seems to have uneven weight distribution. It hase a red patch on its head with yellow eyes.",
     },
     {
       id: 3,
@@ -65,14 +65,14 @@ export const birds = {
       species: "Wire Tailed Swallow",
       rarity: 1,
       location: "Everywhere",
-      notes: "I haven't seen any individual in the city. But as soon as we start moving out, in any direction, we can spot them sitting on cables and wires. They are always in gorups of 10 or more. <br> Small navy blue/white birds with long stingy tails. They have an orange patch on their head.",
+      notes: "I haven't seen any individual in the city. But as soon as we start moving out, in any direction, we can spot them sitting on cables and wires. They are always in groups of 10 or more. <br> Small navy blue/white birds with long stingy tails. They have an orange patch on their head.",
     },
     {
       id: 8,
       species: "Purple Sunbird",
       rarity: 0,
       location: "Everywhere",
-      notes: "This is one of my favourite birds!! <br> It is very small in size, has a metallic blue color and a pointy bent beak. It uses it's straw like tongue to sip nectar from flowers. It is so small and so nimble that I've seen is stand on small leaf stems which won't even bend under the bird's weight",
+      notes: "This is one of my favourite birds!! <br> It is very small in size, has a metallic blue color and a pointy bent beak. It uses its straw like tongue to sip nectar from flowers. It is so small and so nimble that I've seen is stand on small leaf stems which won't even bend under the bird's weight",
     },
     {
       id: 9,
