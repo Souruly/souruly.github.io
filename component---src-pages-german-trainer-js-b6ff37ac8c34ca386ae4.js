@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{rmhy:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return u}));var a=t("q1tI"),r=t.n(a),c=t("Kvkj"),i=t("9X5o"),o=t("gkv3");function u(){return r.a.createElement(c.b,{bigTitle:"German Trainer"},r.a.createElement(i.b,null,r.a.createElement(c.c,{data:o.a.rows})))}}}]);
+//# sourceMappingURL=component---src-pages-german-trainer-js-b6ff37ac8c34ca386ae4.js.map
