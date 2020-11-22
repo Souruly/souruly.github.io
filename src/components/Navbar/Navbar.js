@@ -42,6 +42,12 @@ export default function index({ children, ...restProps }) {
             <NavDropdown.Item className="ml-2" as={Link} to="/birdsList">
               Birdwatching Journal
             </NavDropdown.Item>
+            <NavDropdown.Item className="ml-2" as={Link} to="/germanWordsList">
+              Common German Words
+            </NavDropdown.Item>
+            <NavDropdown.Item className="ml-2" as={Link} to="/germanTrainer">
+              German Word Trainer
+            </NavDropdown.Item>
             {/* <NavDropdown.Item className="ml-2" href="/about">
               Books List
             </NavDropdown.Item>
