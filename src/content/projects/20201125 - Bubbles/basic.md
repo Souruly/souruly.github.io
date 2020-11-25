@@ -1,7 +1,7 @@
 ---
 title: "Bubbles"
 tags: ["Art"]
-description: "Beatigul satisfying bubbles"
+description: "Beatiful satisfying bubbles"
 author: "Sourav Kulkarni"
 date: "2020-09-26"
 ---

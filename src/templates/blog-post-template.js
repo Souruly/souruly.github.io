@@ -5,6 +5,8 @@ import {
   PostTitle,
   PostSubTitle,
   PostContent,
+  PostPage,
+  PostPageHeader,
 } from "../styles/template-styles/general-post-template"
 
 const SubTitle = ({ ttr, date, author }) => (
@@ -19,14 +21,17 @@ export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <PageLayout title="Blog Post">
-      <PostTitle>{post.frontmatter.title}</PostTitle>
-      <SubTitle
-        ttr={post.timeToRead}
-        date={post.frontmatter.date}
-        author={post.frontmatter.author}
-      />
-
-      <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+      <PostPage>
+        <PostPageHeader>
+          <PostTitle>{post.frontmatter.title}</PostTitle>
+          <SubTitle
+            ttr={post.timeToRead}
+            date={post.frontmatter.date}
+            author={post.frontmatter.author}
+          />
+        </PostPageHeader>
+        <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+      </PostPage>
     </PageLayout>
   )
 }

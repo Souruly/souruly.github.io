@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 import styled from "styled-components/macro"
 import "normalize.css"
+import "./fonts.css"
 
 export const GlobalStyles = createGlobalStyle`
   * {

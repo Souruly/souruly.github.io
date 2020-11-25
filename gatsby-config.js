@@ -45,5 +45,14 @@ module.exports = {
         icon: `static/myData/favicon.ico`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `castoro`,
+        ],
+        display: 'swap'
+      }
+    }
   ],
 }
