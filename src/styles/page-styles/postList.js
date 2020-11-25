@@ -38,3 +38,11 @@ export const PostTitle = styled.h3`
     font-size: 2rem;
   }
 `
+
+
+export const PostList = styled.ul`
+`
+
+export const PostListItem = styled.li`
+    
+` 
