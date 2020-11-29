@@ -7,6 +7,6 @@ date: "2020-11-25"
 ---
 
 ---
-[Link](https://souruly.github.io/P5-Playground/Cubic_Hermite/)
+[Link to Animated Sketch](https://souruly.github.io/P5-Playground/Cubic_Hermite/)
 
 ![Screenshot](./screenshot.png)
