@@ -1,17 +1,20 @@
 import styled from "styled-components/macro"
 
 export const DivButton = styled.button`
-  background-color: #dcdcdc;
+  //background-color: #dcdcdc;
   font-family: 'Castoro', serif;
   width: 90%;
   text-align: center;
-  border: 2px solid black;
+  border: 0.1px solid black;
+
+  box-shadow: 2px 2px 4px;
 `
 
 export const WordInfoButton = styled.button`
-  width: 90%;
+  width: 40%;
   text-align: center;
-  border: 2px solid black;
+  border: 1px solid black;
+  margin: 5px;
 `
 
 export const TrainingDiv = styled.div`
@@ -27,6 +30,7 @@ export const Word = styled.h1`
   font-size: 6rem;
   margin: 5px;
   padding: 10px;
+  //text-shadow: 4px 4px 4px rgb(128,128,128);
 
   @media (max-width: 600px) {
     font-size: 3rem;
