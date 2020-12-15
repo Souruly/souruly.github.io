@@ -42,11 +42,7 @@ export default function WordTrainer({ data }) {
                 <Type>{word.wordType}</Type>
                 <Meaning>{word.meaning}</Meaning>
                 <Example>{word.example}</Example>
-                <Translation>
-                  <i>
-                    {word.translation}
-                  </i>
-                </Translation>
+                <Translation>{word.translation}</Translation>
             </WordInfo>
         </TrainingDiv>
       </DivButton>

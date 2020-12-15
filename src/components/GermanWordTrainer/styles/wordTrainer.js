@@ -1,7 +1,8 @@
 import styled from "styled-components/macro"
 
 export const DivButton = styled.button`
-  background-color: lightcoral;
+  background-color: #dcdcdc;
+  font-family: 'Castoro', serif;
   width: 90%;
   text-align: center;
   border: 2px solid black;
@@ -62,7 +63,9 @@ export const Example = styled.h4`
   justify-content: center;
   font-size: 2rem;
   margin: 5px;
+  margin-bottom: 1px;
   padding: 10px;
+  padding-bottom: 1px;
 
   @media (max-width: 600px) {
     font-size: 1rem;
@@ -75,8 +78,11 @@ export const Translation = styled.h4`
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  font-style: italic;
   margin: 5px;
+  margin-top: 1px;
   padding: 10px;
+  padding-top: 1px;
 
   @media (max-width: 600px) {
     font-size: 1rem;
