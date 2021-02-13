@@ -63,6 +63,21 @@ export const MediumTitle = styled.h1`
   }
 `
 
+export const SmallTitle = styled.h1`
+  display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 5px;
+  padding: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+`
+
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
