@@ -13,6 +13,11 @@ export const PostPage = styled.div`
     width: auto;
     box-shadow: none;
   }
+
+  a {
+    font-size : 1rem;
+  }
+
 `
 export const PostPageHeader = styled.div`
   display: flex;
@@ -87,5 +92,10 @@ export const PostContent = styled.div`
     pre {
       width: 100%;
     }
+  }
+
+  
+  p {
+    font-size : 1rem;
   }
 `

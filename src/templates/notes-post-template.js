@@ -6,6 +6,7 @@ import {
   PostSubTitle,
   PostContent,
 } from "../styles/template-styles/general-post-template"
+import { Link } from "gatsby"
 
 const SubTitle = ({ ttr, date, type }) => (
   <PostSubTitle>
@@ -19,6 +20,10 @@ export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <PageLayout title="'How I' -  Post">
+      <p>
+        <Link to="/notes">Back to All Notes</Link>
+      </p>
+
       <PostTitle>{post.frontmatter.title}</PostTitle>
       <SubTitle
         ttr={post.timeToRead}

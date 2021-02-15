@@ -7,6 +7,8 @@ date: "2020-11-25"
 ---
 
 ---
-[Link to Animated Sketch](https://souruly.github.io/P5-Playground/Cubic_Hermite/)
+Simple Sim to show how **Cubic Hermite Polynomial Interpolation** works. For Computer Graphics Course...
+
+<a href="https://souruly.github.io/P5-Playground/Cubic_Hermite/" target="_blank">Link to Interactive Sketch</a>
 
 ![Screenshot](./screenshot.png)

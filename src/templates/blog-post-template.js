@@ -8,6 +8,8 @@ import {
   PostPage,
   PostPageHeader,
 } from "../styles/template-styles/general-post-template"
+import { Link } from "gatsby"
+
 
 const SubTitle = ({ ttr, date, author }) => (
   <PostSubTitle>
@@ -22,6 +24,7 @@ export default ({ data }) => {
   return (
     <PageLayout title="Blog Post">
       <PostPage>
+        <p><Link to="/blog">Back to All Posts</Link></p>
         <PostPageHeader>
           <PostTitle>{post.frontmatter.title}</PostTitle>
           <SubTitle

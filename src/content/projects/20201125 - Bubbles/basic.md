@@ -7,4 +7,7 @@ date: "2020-09-26"
 ---
 
 ---
-[Link](https://souruly.github.io/P5-Playground/Bubbles/)
+Tried to recreate natural looking/feeling bubbles...
+
+<a href="https://souruly.github.io/P5-Playground/Bubbles/" target="_blank">Link to Sim</a>
+
