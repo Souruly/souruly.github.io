@@ -36,7 +36,14 @@ Mensa building constructed in front of the University Building. The Hofgarten is
 - Cola is cheap and alos available in generic brands. The bottles can be recycled to get 25cents.
 
 ---
-***Update : 27th Feb 2021 : All about day 1***
+***Update : 18th Feb 2021 : All about day 1***
+
+- Turns out my phone(Samsung Galaxy S9+) is somwhat useless for this weather. This has something to do with Li-Ion batteries not being suitable in cold climate. I was really bothered by my phone randomly dying out on me. I thought it had something to do with the 4G eating up all the battery. So I throttled the data speeds to 3G. :(. What sort of stupid technology is this?!
+- This reminds me, the phone plan I've taken is "O2-Prepaid S". Which has Unlimited calling/SMS. But the internet is limited to 3.5GB. Per month. And it costs 10Eur. Coming from India where mobile data is dirt cheap, this is really painful. Anyway, the dorm gives me Wifi included in rent and as the current Corona situation stands, I don't think we'll be going out anytime soon..So it's fine.
+- Coming to the dorm and the utilities. The rent is 255Eur. All included. I still have to pay some 17Eur Radio Tax, which is odd in 2021, but german systems are notoriously old fashioned.
+
+---
+***Update : 3rd Feb 2021 : All about day 1***
 
 I arrived in Germany on the 8th of January 2021 at the Frankfurt Airport.
 
@@ -56,13 +63,13 @@ We(me and my friend) were waiting for our train. We had heard (horror) stories f
 
 The train journey from Frankfurt am Main to Bonn Hauptbahnoff was one of the best train journeys I've ever had!! The train track runs parallel to the river, with by beautiful scenery all around. 
 
-We arrived at Bonn Hbf Platform 1 at around 11:45AM. Bonn Haupbahnoff building was the first taste of German architechture I had in Germany.(Spoiler alert : There are a lot more beautiful buildings in the inner streets). I had asked a friend to come pick me up at the Bonn Hbf. Before we took the U-bahn that would take us to the Student Hostel at Tannenbusch, we first went to an Indian Shop to get some frozen rotis(*polya*). It cost a whopping 6.9Eur for 20 rotis...Just for comparison, one soft fluffy poli from Sahasrabuddhe Girni costs...wait for it....5 Rs!! Anyway... we have to live with the consequences of our decisions...
+We arrived at Bonn Hbf Platform 1 at around 11:45AM. Bonn Haupbahnoff building was the first taste of German architechture I had in Germany. I had asked a friend to come pick me up at the Bonn Hbf. Before we took the U-bahn that would take us to the Student Hostel at Tannenbusch, we first went to an Indian Shop to get some frozen rotis(*polya*). It cost a whopping 6.9Eur for 20 rotis...Just for comparison, one soft fluffy poli from Sahasrabuddhe Girni costs...wait for it....5 Rs!! Anyway... we have to live with the consequences of our decisions...
 
-The U-Bahn station is underground. We can take buy tickets trains at the red kiosks on the platforms. I got a 2Eur ticket from Bonn Hbf to Tannenusch Mitte.(My experience with living here for 2 months is that nobody checks your tickets in the U-bahns. I've seen signs that warn of a 40E fine if you are caught without a ticket.)
+The U-Bahn station is underground. We can take buy tickets trains at the red kiosks on the platforms. I got a 2Eur ticket from Bonn Hbf to Tannenusch Mitte.(My experience with living here for a month is that nobody checks your tickets in the U-bahns. I've seen signs that warn of a 40E fine if you are caught without a ticket.)
 
 There's a short walk from Tannenbusch Mitte to the Studentenwerk building. At this point even this short walk looked like a huge undertaking(even for the two of us), when it came to carrying that bulky PC bag around. But we finally made it the hostel building.
 
-I had arranged for the keys to be kept with one of my dorm-mates. We rang him from the ground floor phone and then we got access to the building. First impressions of the room. Small. Eh. First impressions of the kiched. Dirty. (Now I'm living here for ~2 months. The room is still small. The kitchen is still dirty. I just don't notice it anymore I think)
+I had arranged for the keys to be kept with one of my dorm-mates. We rang him from the ground floor phone and then we got access to the building. First impressions of the room. Small. Eh. First impressions of the kiched. Dirty. (Now I'm living here for about a month. The room is still small. The kitchen is still dirty. I just don't notice it anymore I think)
 
 ---
 
