@@ -36,7 +36,7 @@ Mensa building constructed in front of the University Building. The Hofgarten is
 - Cola is cheap and alos available in generic brands. The bottles can be recycled to get 25cents.
 
 ---
-***Update : 18th Feb 2021 : All about day 1***
+***Update : 18th Feb 2021***
 
 - Turns out my phone(Samsung Galaxy S9+) is somwhat useless for this weather. This has something to do with Li-Ion batteries not being suitable in cold climate. I was really bothered by my phone randomly dying out on me. I thought it had something to do with the 4G eating up all the battery. So I throttled the data speeds to 3G. :(. What sort of stupid technology is this?!
 - This reminds me, the phone plan I've taken is "O2-Prepaid S". Which has Unlimited calling/SMS. But the internet is limited to 3.5GB. Per month. And it costs 10Eur. Coming from India where mobile data is dirt cheap, this is really painful. Anyway, the dorm gives me Wifi included in rent and as the current Corona situation stands, I don't think we'll be going out anytime soon..So it's fine.
