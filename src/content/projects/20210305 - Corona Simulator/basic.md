@@ -9,7 +9,7 @@ date: "2020-03-17"
 ---
 ![Sim Initialize](./initial.png)
 
-Inspired by [this](https://youtu.be/gxAaO2rsdIs) beautiful video by [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw), I tried making a simulation of the spread of Covid-19.
+Inspired by <a href="https://youtu.be/gxAaO2rsdIs" target="_blank">this</a> beautiful video by <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" target="_blank">3Blue1Brown</a>, I tried making a simulation of the spread of Covid-19.
 
 <a href="https://souruly.github.io/P5-Playground/Corona_Spread_Simulation/index.html" target="_blank">Link to Sim</a>
 
