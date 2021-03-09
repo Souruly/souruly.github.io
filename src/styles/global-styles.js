@@ -36,6 +36,7 @@ export const GlobalStyles = createGlobalStyle`
 `
 
 export const BigTitle = styled.h1`
+  font-family: "Castoro", serif;
   display: flex;
   width: auto;
   align-items: center;
@@ -76,7 +77,6 @@ export const SmallTitle = styled.h1`
     font-size: 1rem;
   }
 `
-
 
 export const Container = styled.div`
   display: flex;

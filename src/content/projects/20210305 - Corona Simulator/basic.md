@@ -1,7 +1,7 @@
 ---
 title: "Simulating the spread of Covid-19"
 tags: ["Epidemiology"]
-description: "Simulating the spread of Covid-19"
+description: "Interactive simulation of how diseases spread"
 author: "Sourav Kulkarni"
 date: "2020-03-17"
 ---

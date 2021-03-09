@@ -1,7 +1,7 @@
 ---
 title: "Life in Germany"
 tags: ["Hello Germany"]
-description: "999"
+description: "Just some notes of things I've seen in Germany"
 author: "Sourav Kulkarni"
 date: "2021-03-03"
 ---
@@ -9,17 +9,32 @@ date: "2021-03-03"
 ***This post is constantly being updated. But it's not up to date...Also, it's being updated constantly, not regularly...***
 
 ---
+***Update : 6th March 2021***
+
+Types of houses/ Architechture in Germany : 
+- Fachwerkhaus : half Timbered half clay & bricks : Seen near Uedorf
+- Fachhallenhaus : timber framed house with giant sloping roof : (I don't remember seeing this anywhere)
+- Wilhemian Style Houses : Pretty Facades with Intricate Details : Bonn Zentrum, Poppelsdorfer Allee
+- Backsteingotik - Tall buildings in red brick : (I don't remember seeing this anywhere)
+- Bauhaus : Normal building - Currently staying in one. Found everywhere
+
+---
+***Update : 4th March 2021***
+
+- **Recommendation : Hersel/Uedorf** along the banks of Rhine. I had the pleasure of visiting this place at the perfect time in the perfect weather. It was cloudy and cold. The air was filled with mist and was very still. I had gone for a run along the rhine. There was nobody on the path. Just me and my rhthmic footsteps. Occasional quacks of ducks and mallards. Chirping tits, robins and blackbirds in nearby bushes, a bunch of magpies crying in the tree branches up above. Bliss!! 
+
+---
 ***Update : 3rd March 2021***
 
 - You can go from Bonn Hbf to Cologne Hbf in about 30 minutes with a train like RE5.
-- The Cologne Cathedral is so huge!!!! It does't even fit in your field of view. Don't even think of getting in in your Camera frame. Well, with the super-wide lenses, it is possible.. But it's still huge. And so intricate. Beautiful.
-- There's the a bridge across the Rhine in Cologne - Hohenzollen bridge. It has thousands and thousands of locks along it's railings symbolizing people's love for their partners. I won't call it beautiful. But it's there if anyone wants to see it...
+- **Recommendation : Cologne Cathedral**. The Cologne Cathedral is so huge!!!! It does't even fit in your field of view. Don't even think of getting in in your Camera frame. Well, with the super-wide lenses, it is possible.. But it's still huge. And so intricate. Beautiful.
+- There's the a bridge across the Rhine in Cologne - Hohenzollen bridge. It has thousands and thousands of locks along it's railings symbolizing people's love for their partners. I won't recommend it as much as the cologne cathedral, but it is walking distance from the cathedral, so there's no harm in seeing it once...
 
 ---
 ***Update : 28th March 2021***
 - There are some beautiful buildings near Bonn central area. 
 - I saw Beethoven Strasse and Mozart Strasse both while roaming around town
-- There's a Beethoven statue in the Zentrum area near the Altes Postamt and Bonn Munster.
+- **Recommendation : Beethoven Statue, Bonn Munster** Located in the Zentrum area near the Altes Postamt and Bonn Munster. The Munster is under reparations of some sort..
 - The University building is a bright yellow building with an open garden area in front of it. It looks a lot better in Internet photos than in real life right now. That might be because there's a (temporary?)
 Mensa building constructed in front of the University Building. The Hofgarten is surrounded a walking path that is lined by tall trees. It's beautiful.
 - The Rhine River is very close to the University building. It is a large river. Up north, near Buchdorf, there's a ferry that takes you across.

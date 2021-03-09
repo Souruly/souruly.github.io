@@ -1,7 +1,7 @@
 ---
 title: "Art with Oscillators and Spinners"
 tags: ["Mathematics"]
-description: "Generalized Bezier Curve"
+description: "Plotting the compound function from two oscillators and a spinner"
 author: "Sourav Kulkarni"
 date: "2020-04-29"
 ---

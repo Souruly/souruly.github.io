@@ -1,7 +1,7 @@
 ---
 title: "Scanimation"
 tags: ["Art"]
-description: "Scan animations Demo"
+description: "Code to get scanimations from any gif. + Demo."
 author: "Sourav Kulkarni"
 date: "2020-10-15"
 ---

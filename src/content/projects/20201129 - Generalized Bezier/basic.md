@@ -1,7 +1,7 @@
 ---
 title: "Generalized Bezier Curve"
 tags: ["Mathematics"]
-description: "Generalized Bezier Curve"
+description: "Interactive sketch for Bezier Curves"
 author: "Sourav Kulkarni"
 date: "2020-11-29"
 ---

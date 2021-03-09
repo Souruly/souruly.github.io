@@ -1,7 +1,7 @@
 ---
 title: "Cubic Hermite Polynomial Interpolation"
 tags: ["Art"]
-description: "Example usage of the cubic hermite interpolation"
+description: "Interactive sketch for Cubic Hermite Interpolation curves"
 author: "Sourav Kulkarni"
 date: "2020-11-25"
 ---

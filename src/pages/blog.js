@@ -1,7 +1,7 @@
 import React from "react"
 import { PageLayout } from "../components"
 import { Link, graphql } from "gatsby"
-import { Container, PostCard } from "../styles/page-styles/postList"
+import { Container, PostCard, PostTitle, PostDate, PostDescription } from "../styles/page-styles/postList"
 
 export default function Blog({ data }) {
   const { edges: posts } = data.allMarkdownRemark
@@ -14,10 +14,12 @@ export default function Blog({ data }) {
           .map(({ node: post }) => {
             return (
               <PostCard className="blog-post-preview" key={post.id}>
-                <h3>
+                <PostTitle>
                   <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-                </h3>
-                <p>{post.frontmatter.date}</p>
+                </PostTitle>
+                <PostDate>{post.frontmatter.date}</PostDate>
+                <hr></hr>
+                <PostDescription>{post.frontmatter.description}</PostDescription>
               </PostCard>
             )
           })}
@@ -37,6 +39,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date
+            description
           }
           fields {
             slug

@@ -1,7 +1,7 @@
 ---
 title: "Capture-Recapture Estimations"
 tags: ["Mathematics", "Statistics"]
-description: "Capture Recapture"
+description: "Population estimation using capture-racapture method"
 author: "Sourav Kulkarni"
 date: "2019-02-01"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Demo Post"
 tags: ["Blank", "Demo"]
-description: "999"
+description: "Demo post to see how everything looks"
 author: "Sourav Kulkarni"
 date: "2020-10-15"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Binary Tree"
 tags: ["Mathematics"]
-description: "Binary Tree"
+description: "Simple binary tree drawing"
 author: "Sourav Kulkarni"
 date: "2017-03-21"
 ---
