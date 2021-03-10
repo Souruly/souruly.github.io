@@ -94,8 +94,11 @@ export const PostContent = styled.div`
     }
   }
 
-  
   p {
+    font-size : 1rem;
+  }
+
+  li {
     font-size : 1rem;
   }
 `

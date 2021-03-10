@@ -9,6 +9,7 @@ date: "2021-03-03"
 ***This post is constantly being updated. But it's not up to date...Also, it's being updated constantly, not regularly...***
 
 ---
+
 ***Update : 6th March 2021***
 
 Types of houses/ Architechture in Germany : 
@@ -19,11 +20,13 @@ Types of houses/ Architechture in Germany :
 - Bauhaus : Normal building - Currently staying in one. Found everywhere
 
 ---
+
 ***Update : 4th March 2021***
 
 - **Recommendation : Hersel/Uedorf** along the banks of Rhine. I had the pleasure of visiting this place at the perfect time in the perfect weather. It was cloudy and cold. The air was filled with mist and was very still. I had gone for a run along the rhine. There was nobody on the path. Just me and my rhthmic footsteps. Occasional quacks of ducks and mallards. Chirping tits, robins and blackbirds in nearby bushes, a bunch of magpies crying in the tree branches up above. Bliss!! 
 
 ---
+
 ***Update : 3rd March 2021***
 
 - You can go from Bonn Hbf to Cologne Hbf in about 30 minutes with a train like RE5.
@@ -31,6 +34,7 @@ Types of houses/ Architechture in Germany :
 - There's the a bridge across the Rhine in Cologne - Hohenzollen bridge. It has thousands and thousands of locks along it's railings symbolizing people's love for their partners. I won't recommend it as much as the cologne cathedral, but it is walking distance from the cathedral, so there's no harm in seeing it once...
 
 ---
+
 ***Update : 28th March 2021***
 - There are some beautiful buildings near Bonn central area. 
 - I saw Beethoven Strasse and Mozart Strasse both while roaming around town
@@ -40,6 +44,7 @@ Mensa building constructed in front of the University Building. The Hofgarten is
 - The Rhine River is very close to the University building. It is a large river. Up north, near Buchdorf, there's a ferry that takes you across.
 
 ---
+
 ***Update : 27th Feb 2021 : General Bonn Stuff***
 
 - Bonn is very small. Just go about 5-6 kms away from the center and you are out of the city.
@@ -51,6 +56,7 @@ Mensa building constructed in front of the University Building. The Hofgarten is
 - Cola is cheap and alos available in generic brands. The bottles can be recycled to get 25cents.
 
 ---
+
 ***Update : 18th Feb 2021***
 
 - Turns out my phone(Samsung Galaxy S9+) is somwhat useless for this weather. This has something to do with Li-Ion batteries not being suitable in cold climate. I was really bothered by my phone randomly dying out on me. I thought it had something to do with the 4G eating up all the battery. So I throttled the data speeds to 3G. :(. What sort of stupid technology is this?!
@@ -58,6 +64,7 @@ Mensa building constructed in front of the University Building. The Hofgarten is
 - Coming to the dorm and the utilities. The rent is 255Eur. All included. I still have to pay some 17Eur Radio Tax, which is odd in 2021, but german systems are notoriously old fashioned.
 
 ---
+
 ***Update : 3rd Feb 2021 : All about day 1***
 
 I arrived in Germany on the 8th of January 2021 at the Frankfurt Airport.
