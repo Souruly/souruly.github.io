@@ -22,7 +22,7 @@ with center at P1 and given size and speed. The final point drawn on screen(in t
 
 ![Simple Parametes](./simple.png)
 
-PS : If you let this run for a while, you'd see that the drawing returns to it's start point. This depends on what initial parameters you choose. The simplest parameters where the values have a small LCM would converge faster, in one-two loops. Please play around with the sliders to have more complex drawings...
+PS : If you let this run for a while, you'd see that the drawing returns to its start point. This depends on what initial parameters you choose. The simplest parameters where the values have a small LCM would converge faster, in one-two loops. Please play around with the sliders to have more complex drawings...
 
 ![Complex Parameters](./complex.png)
 

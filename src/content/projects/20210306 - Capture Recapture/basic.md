@@ -25,6 +25,8 @@ The captured birds are then released and captured again n-number of times. Depen
 
 YOu may think that these popoulation estimates are not that great. But in case of higher population sizes and more number of recaptures, the accuracy improves. However, that requires a different formula for calculation.
 
+---
+
 PS(6th March 2021) : 
 
 I similar <a href="https://souruly.github.io/Bio/Flocking/index.html" target="_blank">Flocking Simulator</a> is available on the <a href="https://souruly.github.io/Bio" target="_blank">Biology Project Page</a>

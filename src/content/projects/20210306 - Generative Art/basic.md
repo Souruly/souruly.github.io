@@ -28,7 +28,9 @@ Some Examples :
 
 ![Example 2](./art2.png)
 
-<u>PS(6th March 2021)</u> : <br>
+---
+
+<u>**PS(6th March 2021)**</u> : <br>
 I've always been intereted in these kinds of designs. I always loved the complexity of the Mandala, or the intricacies of finely sculpted walls of temples, 1000pc jigsaw puzzles, Escherian drawings and so on. I would've loved to draw a good Mandala art or some insanely detailed hyperrealistic sketches. But unfortunately (or fortunately) I have terrible drawing skills. Therefore, I have to depend on tools. When I found coding as one such tool I was elated!! This, back in 2017 was one of my first attempts at doing something like this. Procedurally generating art. How can something as simple as rotating sticks make something so beautiful!! I was instantly hooked. If you browse more of my projects, you will find similar themes..
 After 4 years, as of now, I play around with shaders to make more such visualizations...
 

@@ -17,6 +17,8 @@ Play with the slider to change the angle of branching.
 
 ![Changed Angle](./angle.png)
 
+---
+
 <u>PS(6th March 2021)</u> : <br>
 I used this same binary tree in my Biology inspired projects page. <a href="https://souruly.github.io/Bio" target="_blank">Link</a>
 
