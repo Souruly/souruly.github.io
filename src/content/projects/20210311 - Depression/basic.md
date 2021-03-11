@@ -4,6 +4,7 @@ tags: ["Life"]
 description: "This is how it feels to be depressed..."
 author: "Sourav Kulkarni"
 date: "2018-08-03"
+priority: "starred"
 ---
 
 ---

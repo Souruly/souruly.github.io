@@ -1,7 +1,7 @@
 import React from "react"
 import { PageLayout } from "../components"
 import { Link, graphql } from "gatsby"
-import { Container, PostCard, PostTitle, PostDate, PostDescription } from "../styles/page-styles/postList"
+import { Container, PostCard, PostTitle, PostDate, PostDescription, Star } from "../styles/page-styles/postList"
 
 export default function Projects({ data }) {
   const { edges: posts } = data.allMarkdownRemark
@@ -14,6 +14,8 @@ export default function Projects({ data }) {
           .map(({ node: post }) => {
             return (
               <PostCard className="projects-post-preview" key={post.id}>
+                {console.log(post.frontmatter.priority)}
+                {post.frontmatter.priority=="starred" ? <Star /> : <></>}
                 <PostTitle>
                   <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                 </PostTitle>
@@ -39,6 +41,7 @@ export const pageQuery = graphql`
             title
             date
             description
+            priority
           }
           id
         }

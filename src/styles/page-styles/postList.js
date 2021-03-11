@@ -15,11 +15,16 @@ export const Container = styled.div`
     flex-direction: column;
     font-size: 3rem;
   }
+
+  .starred {
+    border: 2px solid black;
+  }
 `
 
 export const PostCard = styled.div`
   //display: flex;
   //flex-direction: column;
+  position: relative;
   width: min(80%, 400px);
   align-items: left;
   justify-content: center;
@@ -42,11 +47,20 @@ export const PostCard = styled.div`
 
 export const PostTitle = styled.h3`
   font-size: 2rem;
-
   @media (max-width: 600px) {
     font-size: 1.6rem;
   }
 `
+
+export const Star = styled.div`
+  position: absolute;
+  right: 5px;
+  top: -5px;
+  :after {
+    content: "★";
+  }
+`
+
 export const PostDate = styled.h5`
   font-size: 1.2rem;
 

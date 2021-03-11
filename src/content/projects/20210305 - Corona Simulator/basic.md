@@ -4,6 +4,7 @@ tags: ["Epidemiology"]
 description: "Interactive simulation of how diseases spread"
 author: "Sourav Kulkarni"
 date: "2020-03-17"
+priority: "starred"
 ---
 
 ---

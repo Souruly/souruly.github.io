@@ -4,6 +4,7 @@ tags: ["Mathematics", "Art"]
 description: "Binary Tree"
 author: "Sourav Kulkarni"
 date: "2017-11-02"
+priority: "starred"
 ---
 
 ---
