@@ -14,7 +14,6 @@ export default function Projects({ data }) {
           .map(({ node: post }) => {
             return (
               <PostCard className="projects-post-preview" key={post.id}>
-                {console.log(post.frontmatter.priority)}
                 {post.frontmatter.priority=="starred" ? <Star /> : <></>}
                 <PostTitle>
                   <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
