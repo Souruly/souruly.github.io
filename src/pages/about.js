@@ -25,9 +25,8 @@ export default function About() {
           <Information>
             <p>Hello,</p>
             <p>
-              My name is <b>Sourav Kulkarni</b>. I am a computer science student
-              current waiting for my MSc Media Informatics course to start in
-              RWTH Aachen.
+              My name is <b>Sourav Kulkarni</b>. I am a Computer Science student at 
+              RWTH Aachen studying MSc Media Informatics.
             </p>
             <p>
               In my spare time you will most likely find me on local trails or
@@ -69,7 +68,7 @@ export default function About() {
               <p>September 2018 - May 2019</p>
             </CenterContainer>
             <Information>
-              <p>Project Intern under Dr. A. K. Srivastava for weather data analysis.</p><p> Dataset : IMD+IITM Hourly Weather Data 1967-2017</p><p> Technologies used : Python</p>
+              <p>Project Intern under Dr. A. K. Srivastava for weather data analysis.</p><p> Dataset : IMD + IITM Hourly Weather Data 1967-2017</p><p> Technologies used : Python</p>
             </Information>
           </Experience>
         </SecondaryContainer>

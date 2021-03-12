@@ -1,7 +1,7 @@
 ---
 title: "Bubbles"
 tags: ["Art"]
-description: "Beatiful satisfying bubbles animation"
+description: "Beautiful satisfying bubbles animation"
 author: "Sourav Kulkarni"
 date: "2020-09-26"
 priority: "starred"

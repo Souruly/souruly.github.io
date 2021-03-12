@@ -1,5 +1,5 @@
 ---
-title: "Depresion Simulator"
+title: "Depression Simulator"
 tags: ["Life"]
 description: "This is how it feels to be depressed..."
 author: "Sourav Kulkarni"
