@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{rmhy:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return u}));var a=n("q1tI"),r=n.n(a),c=n("Kvkj"),l=n("9X5o"),o=n("gkv3");function u(){return r.a.createElement(c.b,{bigTitle:"German Flash Cards"},r.a.createElement(l.b,null,r.a.createElement(c.c,{data:o.a.rows}),r.a.createElement("p",null,"Click on the card to get the next word")))}}}]);
-//# sourceMappingURL=component---src-pages-german-trainer-js-94244dd3292be04106a1.js.map
