@@ -56,6 +56,7 @@ export const Star = styled.div`
   position: absolute;
   right: 5px;
   top: -5px;
+  font-size : 1rem;
   :after {
     content: "★";
   }
