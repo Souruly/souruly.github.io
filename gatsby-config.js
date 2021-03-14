@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: [], // just in case those previously mentioned remark plugins sound cool :)
+        plugins: ["gatsby-remark-gifs"],
       },
     },
     `gatsby-plugin-sharp`,
@@ -33,6 +33,7 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          "gatsby-remark-gifs"
         ],
       },
     },
