@@ -10,13 +10,19 @@ date: "2021-03-03"
 
 ---
 
+***Update : 16th March 2021***
+
+- **Recommendation : Alfter Tennis Club Area**. This has become one of my go to places for a run. It is very close to where I live(Tannenbusch Mitte) and offers a good gradient. The entire route from the Tannenbusch Mitte shopping center to the top of the hill at the Alfter Tennis Club is about 5km with an elevation gain of about 100m. The route I take goes through the park(Grünzug Bonn Nord), under L1389 continueing onto Buschdorfer Weg, then left onto Herseler Weg and then straight as the road goes till you reach the top of the hill. You can see the old Alfter Schloss and the beautiful St. Matthäus church on your right. As you continue your ascent along the narrow town roads, you will find some really old German houses. Then as you move further ahead, the gradient gets steeper. It is a nice quiet area. You'd see a sign saying that you have to turn left to go to the Tennis Club, but I suggest you go straight to Gorreshof. Once you reach the top, you will find yourself in open fields, with horses happily grazing around. If you look a little distance ahead, past the fields, you'll find the outer boundaries of Waldville, with a lot of tree cover. You can then walk along the Fuchskaulerbahn to the Tennis Club. The entire area is quite nice for a hike or to just get away from the city life.
+
+---
+
 ***Update : 6th March 2021***
 
 Types of houses/ Architecture in Germany : 
 - Fachwerkhaus : half Timbered half clay & bricks : Seen near Uedorf
-- Fachhallenhaus : timber framed house with giant sloping roof : (I don't remember seeing this anywhere)
+- Fachhallenhaus : timber framed house with giant sloping roof : Alfter
 - Wilhemian Style Houses : Pretty Facades with Intricate Details : Bonn Zentrum, Poppelsdorfer Allee
-- Backsteingotik - Tall buildings in red brick : (I don't remember seeing this anywhere)
+- Backsteingotik - Tall buildings in red brick : Alfter
 - Bauhaus : Normal building - Currently staying in one. Found everywhere
 
 ---

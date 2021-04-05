@@ -17,14 +17,17 @@ import { BiRun } from "react-icons/bi"
 import { Link } from "gatsby"
 
 export default function Home() {
+  const quotes = ["“All the world's a stage, and all the men and women merely players: they have their exits and their entrances; and one man in his time plays many parts, his acts being seven ages.”", 
+  "‘Tell me,’ the great twentieth-century philosopher Ludwig Wittgenstein once asked a friend, ‘why do people always say it was natural for man to assume that the sun went round the Earth rather than that the Earth was rotating?’ His friend replied, ‘Well, obviously because it just looks as though the Sun is going round the Earth.’ Wittgenstein responded, ‘Well, what would it have looked like if it had looked as though the Earth was rotating?’"];
+
+  const quote = quotes[Math.floor(Math.random()*quotes.length)];
+
   return (
     <PageLayout bigTitle="Sourav Kulkarni">
       <br></br>
       <Container>
         <Quote>
-          “All the world's a stage, and all the men and women merely players:
-          they have their exits and their entrances; and one man in his time
-          plays many parts, his acts being seven ages.”
+          {quote}
         </Quote>
         <IconsDock>
           <li>
