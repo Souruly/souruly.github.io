@@ -23,7 +23,8 @@ export default function Home() {
   "“Now I'm not sure, was I a human who just dreamt it was a butterfly or am I a butterfly who was dreaming it's a human?”",
   "“By all means let's be open-minded, but not so open-minded that our brains drop out.”",
   "“Four legs good, two legs bad.....Four legs good, two legs better!”",
-  "“If liberty means anything at all it means the right to tell people what they do not want to hear.”"];
+  "“If liberty means anything at all it means the right to tell people what they do not want to hear.”",
+  "“It is not necessary to accept everything as true, one must only accept it as necessary”"];
 
   const quote = quotes[Math.floor(Math.random()*quotes.length)];
 
