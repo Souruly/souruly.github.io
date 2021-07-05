@@ -24,7 +24,9 @@ export default function Home() {
   "“By all means let's be open-minded, but not so open-minded that our brains drop out.”",
   "“Four legs good, two legs bad.....Four legs good, two legs better!”",
   "“If liberty means anything at all it means the right to tell people what they do not want to hear.”",
-  "“It is not necessary to accept everything as true, one must only accept it as necessary”"];
+  "“It is not necessary to accept everything as true, one must only accept it as necessary”",
+  "“The question is not, \"Can they reason?\" nor, \"Can they talk?\" but \"Can they suffer?”",
+  "“Those people who treat politics and morality separately will never understand either of them.”"];
 
   const quote = quotes[Math.floor(Math.random()*quotes.length)];
 
